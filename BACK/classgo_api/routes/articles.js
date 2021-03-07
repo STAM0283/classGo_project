@@ -1,15 +1,14 @@
-const { json } = require('body-parser');
 const express = require('express');
 const connexion = require('../data/mysql');
 
 const router = express.Router();
 
-router.get('/articles', (req, res) => {
+router.get('/articles', (_, res) => {
   connexion.query('SELECT * FROM article', (err, result) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(json(result));
+      res.send(result);
     }
   });
 });
