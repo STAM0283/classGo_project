@@ -1,9 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import LOGO from '../../images/LOGO.png';
-import position from '../../images/position.png';
-import user from '../../images/user.png';
-import shopping from '../../images/shopping.png';
 import SearchBar from './SearchBar';
 import './interface.css';
 import MenuBurger from './MenuBurger';
@@ -14,9 +11,11 @@ const Header = () => {
     history.push('/userConnexion');
   };
   return (
-    <div className="header">
-      <MenuBurger />
+    <div id="header">
       <div className="header1">
+        <div>
+          <MenuBurger />
+        </div>
         <div>
           <SearchBar />
         </div>
@@ -25,19 +24,13 @@ const Header = () => {
         </div>
         <div className="user">
           <div>
-            <input type="image" src={position} alt="positionImage" id="position" />
-            <br />
-            <label htmlFor="position">Mon magasin</label>
+            <i className="fas fa-store-alt" />
           </div>
           <div onClick={connexionDirection} aria-hidden>
-            <input type="image" src={user} alt="count User" id="coutUser" />
-            <br />
-            <label htmlFor="coutUser">Mon compte</label>
+            <i className="fas fa-user" />
           </div>
           <div className="shopping">
-            <input type="image" src={shopping} alt="shopping cart" id="shopping" />
-            <br />
-            <label htmlFor="shopping">Mon panier</label>
+            <i className="fas fa-shopping-cart" />
           </div>
         </div>
       </div>

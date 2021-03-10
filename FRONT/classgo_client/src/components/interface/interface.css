@@ -11,8 +11,9 @@
 #menuToggle
 {
 display: block;
-position: relative;
-top: 50px;
+width: 25px;
+position: absolute;
+top: 20px;
 left: 50px;
 z-index: 1;
 -webkit-user-select: none;
@@ -34,7 +35,7 @@ z-index: 2;
 #menuToggle span
 {
 display: block;
-width: 33px;
+width: 25px;
 height: 4px;
 margin-bottom: 5px;
 position: relative;
@@ -44,7 +45,7 @@ border-radius: 3px;
 
 z-index: 1;
 
-transform-origin: 4px 0px;
+transform-origin: 1px 0px;
 
 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
             background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -99,6 +100,10 @@ transform: none;
 i {
   cursor: pointer;
 }
+.home{
+  width: 80%;
+  margin-left: 10%;
+}
 li{
   list-style: none;
 }
@@ -117,8 +122,8 @@ li{
   margin-left: -25px;
 }
 .logo img {
-    width: 65%;
-    margin-right: 100px;
+    width: 250px;
+    margin-right: 200px;
 }
 .user input {
     width: 20px;
@@ -133,7 +138,6 @@ li{
 }
 .header1{
     display: flex;
-    height: 90px;
     justify-content: space-between;
     background-color: #48D1CC;
 }
@@ -145,55 +149,45 @@ li{
 }
 .user {
     display: flex;
+    margin-right: 30px;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+.user i{
+  margin-right: 10px;
 }
 
 /* CSS Slide Show :  */
-.slide-container {
-    width: 60%;
-    margin-left: 20%;
-}
-.slide-container img{
-  height: 500px;
-}
 @media (max-width: 375px){
   .slide-container img {
-    margin-top: 30px;
     width: 300px;
-    height: 200px;
-  }
-  .logo img {
-    margin-left: 100px;
   }
   .user input {
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
     cursor: pointer;
 }
     .user label {
       display: none;
     }
-    .logo {
+    .user{
+         width: 100px;
+         height: 40px;
+         position: absolute;
+         right: 20px;
+    }
+    .logo img{
+      width: 100px;
       margin-left: 100px;
+      margin-top: 16px;
     }
   
   }
   @media (max-width: 414px){
+    .slide-container img {
+      width: 300px;
+    }
     #inputSearch{
       display: none;
     }
-    .logo img {
-      font-size: 45%;
-      margin-left: 200px;
-      margin-top: 20px;
-    }
-    .user input {
-      width: 15px;
-      height: 15px;
-      margin-right: 30px;
-      margin-top: 30px;
-      cursor: pointer;
-  }
     .slide-container{
       margin-top: 30px;
       width: 280px;
@@ -206,9 +200,6 @@ li{
   }
 
   @media (max-width: 768px) {
-    .header{
-      width: 768px;
-    }
     .navBurger{
       display: block;
     }
@@ -221,13 +212,9 @@ li{
     #menu li{
   font-size: 15px;
     }
-    .logo img {
-      font-size: 40%;
-      margin-left: 20px;
-      margin-top: 20px;
-    }
     #inputSearch{
       border: none;
+      display: none;
       text-decoration: none;
       width: 200px;
       font-size: 10px;
@@ -239,17 +226,11 @@ li{
     .user label {
       display: none;
     }
-    .user input {
-      width: 20px;
-      height: 20px;
-      margin-top: 30px;
-      cursor: pointer;
-  }
-  .shopping{
-    margin-right: 40px;
-  }
   .slide-container {
     margin-top: 20px;
+  }
+  .slide-container img{
+    height: 300px;
   }
 
   }
