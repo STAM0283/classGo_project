@@ -34,7 +34,7 @@ const Header = () => {
             <br />
             <label htmlFor="coutUser">Mon compte</label>
           </div>
-          <div>
+          <div className="shopping">
             <input type="image" src={shopping} alt="shopping cart" id="shopping" />
             <br />
             <label htmlFor="shopping">Mon panier</label>

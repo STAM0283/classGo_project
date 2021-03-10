@@ -1,5 +1,5 @@
 import React from 'react';
-import './menuBurger.css';
+import './interface.css';
 
 const MenuBurger = () => (
   <nav role="navigation" className="navBurger">
