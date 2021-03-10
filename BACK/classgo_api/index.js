@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const routerCategory = require('./routes/category');
 const routerArticle = require('./routes/articles');
+const routerImage = require('./routes/images');
 
 const PORT = 5000 || process.env.PORT;
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/', routerCategory);
 app.use('/', routerArticle);
+app.use('/', routerImage);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
