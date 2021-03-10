@@ -9,10 +9,19 @@ const NavBar = () => (
           <NavLink exact to="/" />
         </li>
         <li>
+          <NavLink exact to="/searchBar" />
+        </li>
+        <li>
+          <NavLink exact to="/myStore" />
+        </li>
+        <li>
           <NavLink exact to="/userConnexion" />
         </li>
         <li>
           <NavLink exact to="/userInscription" />
+        </li>
+        <li>
+          <NavLink exact to="/userComments" />
         </li>
         <li>
           <NavLink exact to="/userPanier" />

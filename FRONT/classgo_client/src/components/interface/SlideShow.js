@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import 'react-slideshow-image/dist/styles.css';
+import { Slide } from 'react-slideshow-image';
+import axios from 'axios';
 
-const SlideShow = () => (
-  <div className="slideShow">
-    SlideShow
-  </div>
-);
+const proprieties = {
+  duration: 5000,
+  transitionDuration: 500,
+  infinite: true,
+  indicators: true,
+  arrows: true,
+
+};
+
+const SlideShow = () => {
+  const [images, setImages] = useState(null);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/images').then((response) => {
+      setImages(response.data);
+    });
+  }, []);
+  return images !== null ? (
+    <div className="slide-container">
+      <Slide {...proprieties}>
+        {
+          images.map((item) => (
+            <div className="each-slide">
+              <div>
+                <img src={item.url} alt={item.title} />
+              </div>
+            </div>
+
+          ))
+        }
+      </Slide>
+    </div>
+
+  ) : (
+    <p>Loading</p>
+  );
+};
 
 export default SlideShow;
