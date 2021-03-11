@@ -7,15 +7,29 @@ import MenuBurger from './MenuBurger';
 
 const Header = () => {
   const history = useHistory();
+  const homeDirection = () => {
+    history.push('/');
+  };
+  const aboutDirection = () => {
+    history.push('/about');
+  };
+  const contactDirection = () => {
+    history.push('/contact');
+  };
   const connexionDirection = () => {
     history.push('/userConnexion');
   };
+  const shoppingCartDirection = () => {
+    history.push('/shoopingCart');
+  };
+  const myStoreDirection = () => {
+    history.push('/myStore');
+  };
+
   return (
     <div id="header">
       <div className="header1">
-        <div>
-          <MenuBurger />
-        </div>
+        <MenuBurger />
         <div>
           <SearchBar />
         </div>
@@ -23,22 +37,16 @@ const Header = () => {
           <img src={LOGO} alt="logo-web-site" />
         </div>
         <div className="user">
-          <div>
-            <i className="fas fa-store-alt" />
-          </div>
-          <div onClick={connexionDirection} aria-hidden>
-            <i className="fas fa-user" />
-          </div>
-          <div className="shopping">
-            <i className="fas fa-shopping-cart" />
-          </div>
+          <i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden />
+          <i className="fas fa-user" onClick={connexionDirection} aria-hidden />
+          <i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden />
         </div>
       </div>
       <div className="navFlex">
         <div className="header2">
           <nav>
             <ul>
-              <li>
+              <li onClick={homeDirection} aria-hidden>
                 ACCUEIL
               </li>
               <li>
@@ -53,10 +61,10 @@ const Header = () => {
                 BIJOUX
                 <i className="fas fa-chevron-down" />
               </li>
-              <li>
+              <li onClick={aboutDirection} aria-hidden>
                 A PROPOS
               </li>
-              <li>
+              <li onClick={contactDirection} aria-hidden>
                 CONTACT
               </li>
             </ul>

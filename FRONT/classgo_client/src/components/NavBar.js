@@ -9,6 +9,12 @@ const NavBar = () => (
           <NavLink exact to="/" />
         </li>
         <li>
+          <NavLink exact to="/contact" />
+        </li>
+        <li>
+          <NavLink exact to="/about" />
+        </li>
+        <li>
           <NavLink exact to="/searchBar" />
         </li>
         <li>
@@ -22,9 +28,6 @@ const NavBar = () => (
         </li>
         <li>
           <NavLink exact to="/userComments" />
-        </li>
-        <li>
-          <NavLink exact to="/userPanier" />
         </li>
         <li>
           <NavLink exact to="/shoopingCart" />
