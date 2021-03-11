@@ -99,6 +99,7 @@ transform: none;
 /* ---------------------------- */
 i {
   cursor: pointer;
+  font-size: xx-large;
 }
 .home{
   width: 80%;
@@ -106,24 +107,28 @@ i {
 }
 li{
   list-style: none;
+  cursor: pointer;
 }
 #inputSearch{
   border: none;
   text-decoration: none;
-  width: 450px;
-  height: 35px;
-  margin-left: 70px;
-  margin-top: 20px;
+  width: 400px;
+  height: 45px;
+  margin-left: 20px;
+  margin-top: 25px;
   border-radius: 15px;
 }
 .searchBar i{
   position: absolute;
   margin-top: 30px;
-  margin-left: -25px;
+  margin-left: -35px;
 }
 .logo img {
-    width: 250px;
+    width: 380px;
     margin-right: 200px;
+}
+.logo{
+  width: 400px;
 }
 .user input {
     width: 20px;
@@ -137,6 +142,7 @@ li{
     margin-right: 5px;
 }
 .header1{
+  width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #48D1CC;
@@ -152,11 +158,56 @@ li{
     margin-right: 30px;
     margin-top: 30px;
     justify-content: space-evenly;
+    height: 30px;
 }
 .user i{
   margin-right: 10px;
 }
-
+/* -------------------------------------------- CSS articles found*/
+.categoryArticles{
+  display: flex;
+  color: #696B6D;
+ justify-content: space-around;
+ margin-left: 35%;
+ width: 30%;
+}
+.categoryArticles h4{
+  font-size: x-large;
+  cursor: pointer;
+}
+.allArticles{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.article-container{
+  width: 20%;
+}
+.articlesFound img{
+  width: 80%;
+}
+.articlesFound h2{
+  margin-bottom: 30px;
+  font-size: medium;
+}
+.articlesFound p{
+  font-weight: bolder;
+  margin-top: 6px;
+  padding-bottom: 0;
+}
+.articlesFound button{
+  width: 100%;
+  height: 40px;
+  font-size: large;
+  text-align: center;
+  color: white;
+  background-color: #0000FF;
+}
+.starsAndPrice{
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+}
 /* CSS Slide Show :  */
 @media (max-width: 375px){
   .slide-container img {
@@ -165,14 +216,18 @@ li{
   .user input {
     cursor: pointer;
 }
+.user i{
+  font-size: medium;
+}
+.header1{
+  justify-content: space-between;
+  border: 2px solid brown;
+}
     .user label {
       display: none;
     }
     .user{
-         width: 100px;
-         height: 40px;
-         position: absolute;
-         right: 20px;
+      margin-top: 20px;
     }
     .logo img{
       width: 100px;
@@ -193,6 +248,20 @@ li{
       width: 280px;
       height: 200px;
     }
+    .logo img{
+      width: 100px;
+      margin-left: 100px;
+      margin-top: 16px;
+    }
+    .user i{
+      font-size: medium;
+    }
+    .user{
+      width: 100px;
+      height: 40px;
+      position: absolute;
+      right: 20px;
+ }
     .user label {
       display: none;
     }

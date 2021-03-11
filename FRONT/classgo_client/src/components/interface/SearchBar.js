@@ -14,12 +14,10 @@ const SearchBar = () => {
     </div>
 
   ) : (
-    <p>
-      <div className="searchBar">
-        <input type="search" id="inputSearch" value={inputValue} onChange={handleInput} placeholder="Une envie, une élégance, un produit ?" />
-        <i className="fas fa-search" />
-      </div>
-    </p>
+    <div className="searchBar">
+      <input type="search" id="inputSearch" value={inputValue} onChange={handleInput} placeholder="Une envie, une élégance, un produit ?" />
+      <i className="fas fa-search" />
+    </div>
   );
 };
 
