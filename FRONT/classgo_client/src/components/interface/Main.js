@@ -13,12 +13,13 @@ import MyStore from '../user/MyStore';
 
 const Main = () => {
   const [articles, setArticles] = useState(null);
+  const [category, setCategory] = useState('');
   useEffect(() => {
-    axios.get('http://localhost:5000/articles').then((response) => {
+    axios.get(`http://localhost:5000/articles?category_id=${category}`).then((response) => {
       console.log(response.data);
       setArticles(response.data);
     });
-  }, []);
+  }, [category]);
   return articles !== null ? (
     <div className="Main">
       <Switch>
@@ -26,6 +27,8 @@ const Main = () => {
           <Home data={{
             articles,
             setArticles,
+            category,
+            setCategory,
           }}
           />
         </Route>

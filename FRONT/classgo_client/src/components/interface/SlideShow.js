@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
 import { Slide } from 'react-slideshow-image';
@@ -24,8 +26,8 @@ const SlideShow = () => {
     <div className="slide-container">
       <Slide {...proprieties}>
         {
-          images.map((item) => (
-            <div className="each-slide">
+          images.map((item, index) => (
+            <div key={index} className="each-slide">
               <div>
                 <img src={item.url} alt={item.title} />
               </div>
