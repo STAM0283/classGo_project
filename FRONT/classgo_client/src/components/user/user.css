@@ -1,3 +1,9 @@
 .comments {
     color: red;
 }
+.none{
+    display: none;
+}
+.block{
+    display: block;
+}
