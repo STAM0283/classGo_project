@@ -3,8 +3,10 @@ const connexion = require('../data/mysql');
 
 const router = express.Router();
 
-router.get('/articles', (_, res) => {
-  connexion.query('SELECT * FROM article', (err, result) => {
+router.get('/articles', (req, res) => {
+  const { category } = req.query;
+  const query = category !== undefined ? `SELECT * from article WHERE category_id = '${category}'` : 'SELECT * from article';
+  connexion.query(query, (err, result) => {
     if (err) {
       res.send(err);
     } else {
