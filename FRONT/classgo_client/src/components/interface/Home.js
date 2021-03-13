@@ -6,7 +6,8 @@ import ArticleFound from './ArticlesFound';
 const Home = (props) => {
   const { articles } = props.data;
   const { setArticles } = props.data;
-  console.log('@@@@@@@@@@', articles);
+  const { category } = props.data;
+  const { setCategory } = props.data;
   return (
     <div className="home">
       <SlideShow />
@@ -14,6 +15,8 @@ const Home = (props) => {
       <ArticleFound data={{
         articles,
         setArticles,
+        category,
+        setCategory,
       }}
       />
     </div>
