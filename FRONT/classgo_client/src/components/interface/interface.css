@@ -220,6 +220,71 @@ li{
   margin-bottom: 10px;
   justify-content: space-evenly;
 }
+/* --------------css contact----------------- */
+.contact{
+  width: 60%;
+  margin-top: 20px;
+  border: 2px solid black;
+  margin-left: 25%;
+}
+.contact p{
+  font-size: xx-large;
+  text-align: start;
+  margin-left: 5px;
+}
+.contact div{
+  margin-top: 20px;
+}
+.contact button{
+  width: 242px;
+  height: 50px;
+  font-size: x-large;
+  margin-right: 5px;
+  border-radius: 10px;
+  color: white;
+}
+.btn{
+  margin-bottom: 20px;
+}
+#btn1{
+  background-color: #48D1CC;
+}
+#btn2{
+  background-color: #778899;
+}
+.emailName input{
+  width: 48%;
+  height: 50px;
+  border-radius: 10px;
+}
+.emailName input::placeholder{
+  font-size: large;
+  padding-left: 5px;
+}
+#input1{
+  margin-right: 1%;
+}
+#input2{
+  margin-left: 1%;
+}
+.object input{
+  width: 98%;
+  height: 50px;
+  border-radius: 10px;
+}
+.object input::placeholder{
+  font-size: large;
+  padding-left: 5px;
+}
+textarea {
+  width: 98%;
+  height: 400px;
+  border-radius: 10px;
+}
+textarea::placeholder{
+  font-size: xx-large;
+  padding-left: 5px;
+}
 /* ----------------css about------------- */
 .about{
   width: 40%;

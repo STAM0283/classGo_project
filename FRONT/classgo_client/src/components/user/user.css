@@ -38,7 +38,7 @@
     width: 300px;
     border-radius: 15px 0 0 15px;
 }
-input::placeholder{
+#newsLetters::placeholder{
     color: white;
     font-size: large;
     padding-left: 5px;
