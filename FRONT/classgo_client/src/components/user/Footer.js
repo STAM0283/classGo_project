@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Footer = () => {
+  const history = useHistory();
+  const myStoreDirection = () => {
+    history.push('/myStore');
+  };
+  const aboutDirection = () => {
+    history.push('/about');
+  };
+  const contactDirection = () => {
+    history.push('/contact');
+  };
   const [email, setEmail] = useState('');
   const [emailValide, setEmailValide] = useState('none');
   const [emailValide2, setEmailValide2] = useState('none');
@@ -31,16 +42,43 @@ const Footer = () => {
     }
   };
   return (
-    <div>
-      <p>Inscrivez vous pour recevoir nos differentes offres, promotions et avantages clients </p>
+    <div className="footer">
+      <p className="paragraphe">Inscrivez vous pour recevoir nos differentes offres, promotions et avantages clients </p>
       <form onSubmit={formSubmitEmail}>
         <input type="text" id="newsLetters" value={email} placeholder="Entrez votre adresse email" onChange={handleEmail} />
+        <button type="submit">INSCRIVEZ-VOUS</button>
         <p className={emailValide}>
           Merci pour votre souscriptiont à notre newsletter ClassGo-Infos
         </p>
         <p className={emailValide2}>Adresse e-mail non valide</p>
-        <button type="submit">INSCRIVEZ-VOUS</button>
       </form>
+      <nav className="footerMenu">
+        <ul>
+          <li>FAQ</li>
+          <li aria-hidden onClick={aboutDirection}>A PROPOS</li>
+          <li>LIVRAISON</li>
+          <li aria-hidden onClick={myStoreDirection}>MAGASINS</li>
+          <li aria-hidden onClick={contactDirection}>CONTACT</li>
+          <li>AIDE</li>
+          <li>MENTIONS LEGALES</li>
+        </ul>
+      </nav>
+      <nav className="socialMedias">
+        <ul>
+          <li>
+            <i className="fab fa-facebook-square" />
+          </li>
+          <li>
+            <i className="fab fa-instagram-square" />
+          </li>
+          <li>
+            <i className="fab fa-youtube-square" />
+          </li>
+          <li>
+            <i className="fab fa-twitter-square" />
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

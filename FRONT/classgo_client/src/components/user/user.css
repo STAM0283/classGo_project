@@ -6,4 +6,60 @@
 }
 .block{
     display: block;
+    color: white;
+    font-weight: bolder;
+}
+.paragraphe{
+    font-size: large;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer{
+    background-color: #635656;
+    bottom:0;
+    width:100%;
+    margin-top: 60px;
+    padding-top:50px;
+    height:250px;
+}
+.footer button{
+    background-color: red;
+    color: white;
+    border-radius: 0 15px 15px 0;
+    width: 230px;
+    font-size: large;
+    height: 44px;
+}
+.footer input {
+    background-color: #AAAAAA;
+    height: 40px;
+    margin-right: 5px;
+    width: 300px;
+    border-radius: 15px 0 0 15px;
+}
+input::placeholder{
+    color: white;
+    font-size: large;
+    padding-left: 5px;
+}
+.footerMenu {
+    margin-top: 30px;
+}
+.footerMenu ul{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: large;
+    color: white;
+}
+.socialMedias ul {
+    display: flex;  
+}
+.socialMedias li{
+    margin-right: 5px;
+}
+.socialMedias{
+    width: 6%;
+    margin-left: 47%;
+    margin-top: 10px;
 }
