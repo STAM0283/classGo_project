@@ -7,6 +7,7 @@ const routerCategory = require('./routes/category');
 const routerArticle = require('./routes/articles');
 const routerImage = require('./routes/images');
 const routerNewsletters = require('./routes/newsletters');
+const routerContact = require('./routes/contact');
 
 const PORT = 5000 || process.env.PORT;
 app.use(cors());
@@ -17,6 +18,7 @@ app.use('/', routerCategory);
 app.use('/', routerArticle);
 app.use('/', routerImage);
 app.use('/', routerNewsletters);
+app.use('/', routerContact);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
