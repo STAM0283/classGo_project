@@ -1,3 +1,4 @@
+/* -----------------CSS FOOTER----------------- */
 .comments {
     color: red;
 }
@@ -62,4 +63,79 @@
     width: 6%;
     margin-left: 47%;
     margin-top: 10px;
+}
+
+/* ---------------------------CSS CONNEXION-------------------- */
+.connexion{
+    width: 60%;
+    margin-top: 20px;
+    border: 2px solid black;
+    margin-left: 25%;
+}
+.connexion h3{
+    font-size: xx-large;
+    background-color: cadetblue;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+}
+.connexion p{
+    text-align: end;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+.emailInput i{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+#open{
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+#close{
+    display: none;
+}
+.fa-eye{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+.fa-eye-slash{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+.connexion input{
+    width: 98%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+.connexion input::placeholder{
+    padding-left: 10px;
+}
+#btnConnexion{
+    background-color: #48D1CC;
+    color: white;
+    margin-right: 5px;
+}
+#btnInscription{
+    background-color: #C4C4C4;
+    color: #3C3838;
+    margin-left: 5px;
+
+}
+.connexion button{
+    width: 30%;
+    height: 50px;
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-bottom: 60px;
 }

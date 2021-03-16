@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import LOGO from '../../images/LOGO.png';
-import SearchBar from './SearchBar';
 import './interface.css';
 import MenuBurger from './MenuBurger';
 
@@ -30,9 +29,6 @@ const Header = () => {
     <div id="header">
       <div className="header1">
         <MenuBurger />
-        <div>
-          <SearchBar />
-        </div>
         <div className="logo">
           <img src={LOGO} alt="logo-web-site" />
         </div>

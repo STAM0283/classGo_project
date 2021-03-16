@@ -13,11 +13,14 @@ import MyStore from '../user/MyStore';
 
 const Main = () => {
   const [articles, setArticles] = useState(null);
+  const [allArtciles, setAllArticles] = useState('');
   const [category, setCategory] = useState('');
+  const [inputValue, setInputValue] = useState('');
   useEffect(() => {
     axios.get(`http://localhost:5000/articles?category_id=${category}`).then((response) => {
       console.log(response.data);
       setArticles(response.data);
+      setAllArticles(response.data);
     });
   }, [category]);
   return articles !== null ? (
@@ -27,8 +30,12 @@ const Main = () => {
           <Home data={{
             articles,
             setArticles,
+            allArtciles,
+            setAllArticles,
             category,
             setCategory,
+            inputValue,
+            setInputValue,
           }}
           />
         </Route>
