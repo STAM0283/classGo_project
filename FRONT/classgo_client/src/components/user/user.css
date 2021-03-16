@@ -101,12 +101,12 @@
 #close{
     display: none;
 }
-.fa-eye{
+.connexion .fa-eye{
     position: absolute;
     margin-top: 10px;
     margin-left: -50px;
 }
-.fa-eye-slash{
+.connexion .fa-eye-slash{
     position: absolute;
     margin-top: 10px;
     margin-left: -50px;
@@ -138,4 +138,67 @@
     font-size: xx-large;
     border-radius: 10px;
     margin-bottom: 60px;
+}
+
+/* -----------CSS AUTHENTIFICATION-------------- */
+.authentification h3{
+    font-size: xx-large;
+    background-color: cadetblue;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.authentification p{
+    font-size: xx-large;
+    width: 20%;
+    margin-left: 18%;
+}
+.civilite{
+    width: 20%;
+    margin-left: 22%;
+}
+.civilite input{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.authentification label{
+    font-size: large;
+}
+.authentification{
+    width: 60%;
+    margin-top: 20px;
+    border: 2px solid black;
+    margin-left: 20%;
+}
+.userInfo input{
+   width: 100%;
+   height: 50px;
+   border-radius: 10px;
+   font-size: large;
+   margin-bottom: 20px;
+}
+.userInfo input::placeholder{
+    font-size: large;
+    padding-left: 5px;
+}
+.userInfo div{
+    margin-left: 0;
+    text-align: start;
+}
+.userInfo{
+    width: 50%;
+    margin-left: 25%;
+}
+.authentification label i{
+    font-size: xx-small;
+}
+.authentification button{
+    width: 30%;
+    height: 50px;
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    background-color: #48D1CC;
+    color: white;
 }
