@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Authentification = () => {
-  const [sexe, setSexe] = useState('');
-  const [name, setName] = useState('');
+  const [displayEyeSlash, setDisplayEyeSlash] = useState('none');
+  const [displayEye, setDisplayEye] = useState('inline');
+  const [type, setType] = useState('password');
+  const [sex, setSex] = useState('');
+  const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const handleSexe = (event) => {
-    setSexe(event.target.value);
+    setSex(event.target.value);
   };
   const handleName = (event) => {
-    setName(event.target.value);
+    setUserName(event.target.value);
   };
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -18,20 +21,33 @@ const Authentification = () => {
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
+  const handleDisplayEye = () => {
+    setDisplayEye('none');
+    setType('text');
+    setDisplayEyeSlash('inline');
+  };
+  const handleDisplayEyeSlash = () => {
+    setDisplayEye('inline');
+    setType('password');
+    setDisplayEyeSlash('none');
+  };
   const submiteForm = (event) => {
     event.preventDefault();
     const data = {
-      sexe,
-      name,
+      sex,
+      username,
       email,
       password,
     };
-    axios.post('http://localhost:5000/inscription', data).then((response) => {
+    axios.post('http://localhost:5000/signUp', data).then((response) => {
       console.log(response.data);
-      setSexe('');
-      setName('');
+      alert('Votre message a été envoyé avec succé !');
+      setSex('');
+      setUserName('');
       setEmail('');
       setPassword('');
+    }).catch((err) => {
+      console.log(err);
     });
   };
   return (
@@ -43,9 +59,9 @@ const Authentification = () => {
       </p>
       <form onSubmit={submiteForm}>
         <div className="civilite">
-          <input type="radio" name="sexe" id="women" value="women" onClick={handleSexe} />
+          <input type="radio" name="sex" id="women" value="women" onClick={handleSexe} />
           <label htmlFor="women">Madame</label>
-          <input type="radio" name="sexe" id="man" walue="man" onClick={handleSexe} />
+          <input type="radio" name="sex" id="man" walue="man" onClick={handleSexe} />
           <label htmlFor="man">Monsieur</label>
         </div>
         <br />
@@ -57,7 +73,7 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="text" id="text" placeholder="Entrer votre nom" onChange={handleName} />
+          <input type="text" id="text" placeholder="Entrer votre nom" onChange={handleName} value={username} />
           <br />
           <div>
             <label htmlFor="email">
@@ -66,7 +82,7 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="email" id="email" placeholder="Entrer votre adress email" onChange={handleEmail} />
+          <input type="email" id="email" placeholder="Entrer votre adress email" onChange={handleEmail} value={email} />
           <br />
           <div>
             <label htmlFor="password">
@@ -75,8 +91,11 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="password" id="password" placeholder="Entrer votre mot de passe" onChange={handlePassword} />
-          <i className="fas fa-eye" />
+          <div className="passAuthentification">
+            <input type={type} id="password" placeholder="Entrer votre mot de passe" onChange={handlePassword} value={password} />
+            <i className="fas fa-eye" aria-hidden style={{ display: `${displayEye}` }} onClick={handleDisplayEye} />
+            <i className="fas fa-eye-slash" aria-hidden style={{ display: `${displayEyeSlash}` }} onClick={handleDisplayEyeSlash} />
+          </div>
         </div>
         <div>
           <button type="submit">Valider</button>

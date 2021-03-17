@@ -154,6 +154,9 @@
     width: 20%;
     margin-left: 18%;
 }
+.authentification p i{
+    font-size: xx-small;
+}
 .civilite{
     width: 20%;
     margin-left: 22%;
@@ -172,8 +175,9 @@
     margin-left: 20%;
 }
 .userInfo input{
-   width: 100%;
+   width: 94%;
    height: 50px;
+   margin-left: 3%;
    border-radius: 10px;
    font-size: large;
    margin-bottom: 20px;
@@ -201,4 +205,17 @@
     margin-bottom: 60px;
     background-color: #48D1CC;
     color: white;
+}
+.passAuthentification .fa-eye{
+    position: absolute;
+    display: inline;
+    margin-left: -50px;
+    margin-top: 10px;
+
+}
+.passAuthentification .fa-eye-slash{
+    position: absolute;
+    display: inline;
+    margin-left: -50px;
+    margin-top: 10px;
 }
