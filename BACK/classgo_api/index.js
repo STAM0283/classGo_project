@@ -9,6 +9,8 @@ const routerArticle = require('./routes/articles');
 const routerImage = require('./routes/images');
 const routerNewsletters = require('./routes/newsletters');
 const routerContact = require('./routes/contact');
+const routerSignUp = require('./routes/signUp');
+const routerSignIn = require('./routes/signIn');
 
 const PORT = 5000 || process.env.PORT;
 
@@ -26,6 +28,8 @@ app.use('/', routerArticle);
 app.use('/', routerImage);
 app.use('/', routerNewsletters);
 app.use('/', routerContact);
+app.use('/', routerSignUp);
+app.use('/', routerSignIn);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
