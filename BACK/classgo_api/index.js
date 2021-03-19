@@ -11,6 +11,8 @@ const routerNewsletters = require('./routes/newsletters');
 const routerContact = require('./routes/contact');
 const routerSignUp = require('./routes/signUp');
 const routerSignIn = require('./routes/signIn');
+const routerUser = require('./routes/user');
+const routerComment = require('./routes/comments');
 
 const PORT = 5000 || process.env.PORT;
 
@@ -30,6 +32,8 @@ app.use('/', routerNewsletters);
 app.use('/', routerContact);
 app.use('/', routerSignUp);
 app.use('/', routerSignIn);
+app.use('/', routerUser);
+app.use('/', routerComment);
 
 app.listen(PORT, (err) => {
   if (err) throw err;

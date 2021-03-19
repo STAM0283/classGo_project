@@ -7,7 +7,7 @@ const connexion = require('../data/mysql');
 router.post('/signIn', (req, res) => {
   const { email } = req.body;
   const { password } = req.body;
-  connexion.query('SELECT * FROM user WHERE (email) = ?', email, async (err, result) => {
+  connexion.query('SELECT * FROM user WHERE email = ?', email, async (err, result) => {
     if (err) {
       res.send(err);
     }
