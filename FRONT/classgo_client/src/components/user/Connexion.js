@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -7,6 +8,7 @@ const Connexion = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [displayWrongPassword, setDisplayWrongPassword] = useState('none');
   const [type, setType] = useState('password');
   const [displayEyeSlash, setDisplayEyeSlash] = useState('none');
   const [displayEye, setDisplayEye] = useState('inline');
@@ -32,11 +34,17 @@ const Connexion = () => {
       email,
       password,
     };
-    axios.post('http://localhost:5000/signIn', dataUser).then(() => {
+    axios.post('http://localhost:5000/signIn', dataUser).then((response) => {
+      if (response.data.status === 200) {
+        setDisplayWrongPassword('none');
+        history.push('/');
+      } else {
+        setDisplayWrongPassword('block');
+      }
       setEmail('');
       setPassword('');
-    }).catch(() => {
-      alert('Wrong username/password combination!');
+    }).catch((err) => {
+      throw err;
     });
   };
   return (
@@ -58,6 +66,7 @@ const Connexion = () => {
           <i className="fas fa-eye-slash" style={{ display: `${displayEyeSlash}` }} aria-hidden="true" onClick={handleDisplayEyeSlash} />
         </div>
         <p>Mot de passe oublié</p>
+        <p style={{ display: `${displayWrongPassword}`, color: 'red' }}>Mauvaise combinaison e-mail / mot de passe!</p>
         <div>
           <button type="submit" id="btnConnexion">Se connecter</button>
           <button type="button" id="btnInscription" onClick={() => history.push('/userInscription')}>créer votre compte</button>

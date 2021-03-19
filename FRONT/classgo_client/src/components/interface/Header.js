@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import LOGO from '../../images/LOGO.png';
@@ -24,7 +25,9 @@ const Header = () => {
   const myStoreDirection = () => {
     history.push('/myStore');
   };
-
+  const commentDirection = () => {
+    history.push('/userComments');
+  };
   return (
     <div id="header">
       <div className="header1">
@@ -33,6 +36,7 @@ const Header = () => {
           <img src={LOGO} alt="logo-web-site" />
         </div>
         <div className="user">
+          <i className="far fa-comments" aria-hidden onClick={commentDirection} />
           <i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden />
           <i className="fas fa-user" onClick={connexionDirection} aria-hidden />
           <i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden />

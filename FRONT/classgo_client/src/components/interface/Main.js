@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -18,7 +19,6 @@ const Main = () => {
   const [inputValue, setInputValue] = useState('');
   useEffect(() => {
     axios.get(`http://localhost:5000/articles?category_id=${category}`).then((response) => {
-      console.log(response.data);
       setArticles(response.data);
       setAllArticles(response.data);
     });

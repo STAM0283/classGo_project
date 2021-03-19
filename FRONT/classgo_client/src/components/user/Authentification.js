@@ -9,6 +9,7 @@ const Authentification = () => {
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailValide, setEmailValide] = useState('none');
   const handleSexe = (event) => {
     setSex(event.target.value);
   };
@@ -31,6 +32,10 @@ const Authentification = () => {
     setType('password');
     setDisplayEyeSlash('none');
   };
+  function validateEmail(adressEmail) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(adressEmail).toLowerCase());
+  }
   const submiteForm = (event) => {
     event.preventDefault();
     const data = {
@@ -39,16 +44,23 @@ const Authentification = () => {
       email,
       password,
     };
-    axios.post('http://localhost:5000/signUp', data).then((response) => {
-      console.log(response.data);
-      alert('Votre message a été envoyé avec succé !');
-      setSex('');
-      setUserName('');
-      setEmail('');
-      setPassword('');
-    }).catch((err) => {
-      console.log(err);
-    });
+    if (validateEmail(email)) {
+      axios.post('http://localhost:5000/signUp', data).then(() => {
+        alert('Votre message a été envoyé avec succé !');
+        validateEmail(email);
+        setSex('');
+        setUserName('');
+        setEmail('');
+        setPassword('');
+      }).catch((err) => {
+        console.log(err);
+      });
+    } else {
+      setEmailValide('block');
+      setTimeout(() => {
+        setEmailValide('none');
+      }, 5000);
+    }
   };
   return (
     <div className="authentification">
@@ -82,7 +94,9 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="email" id="email" placeholder="Entrer votre adress email" onChange={handleEmail} value={email} />
+          <input type="text" id="email" placeholder="Entrer votre adress email" onChange={handleEmail} value={email} />
+          <br />
+          <span style={{ display: `${emailValide}` }}>Cette émail n&#39;est pas valide</span>
           <br />
           <div>
             <label htmlFor="password">
@@ -92,7 +106,7 @@ const Authentification = () => {
           </div>
           <br />
           <div className="passAuthentification">
-            <input type={type} id="password" placeholder="Entrer votre mot de passe" onChange={handlePassword} value={password} />
+            <input type={type} id="password" placeholder="Entrer votre mot de passe" onChange={handlePassword} value={password} minLength="8" />
             <i className="fas fa-eye" aria-hidden style={{ display: `${displayEye}` }} onClick={handleDisplayEye} />
             <i className="fas fa-eye-slash" aria-hidden style={{ display: `${displayEyeSlash}` }} onClick={handleDisplayEyeSlash} />
           </div>

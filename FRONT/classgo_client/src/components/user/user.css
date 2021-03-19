@@ -1,7 +1,31 @@
-/* -----------------CSS FOOTER----------------- */
-.comments {
-    color: red;
+/* -----------------CSS COMMENTS----------------- */
+.commentUser{
+    border: 2px solid black;
+    width: 400px;
+    height: 140px;
+    margin-top: 40px;
 }
+.comments form{
+    width: 30%;
+    margin-left: 35%;
+}
+.comments textarea{
+    width: 80%;
+    height: 140px;
+}
+hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.createdAt{
+    background-color: #48D1CC;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* -----------------CSS FOOTER----------------- */
 .none{
     display: none;
 }
