@@ -1,3 +1,25 @@
+/* -----------------CSS SHOOPING----------------- */
+.shooping-container{
+     width: 60%;
+     margin-left: 20%;
+     border: 2px solid black;
+}
+.titleShooping{
+    font-size: x-large;
+    color: white;
+    background-color: #48D1CC;
+    height: 50px;
+}
+.wrapperMenu{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapperInfo{
+    display: flex;
+}
+.wrapperInfo h3{
+    margin-right: 15px;
+}
 /* -----------------CSS COMMENTS----------------- */
 .commentUser{
     border: 2px solid black;
@@ -9,9 +31,22 @@
     width: 30%;
     margin-left: 35%;
 }
+.comments form button{
+    width: 30%;
+    height: 50px;
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    background-color: #48D1CC;
+
+}
 .comments textarea{
     width: 80%;
     height: 140px;
+    font-size: large;
+}
+.comments textarea::placeholder{
+    font-size: large;
 }
 hr {
     margin-bottom: 20px;

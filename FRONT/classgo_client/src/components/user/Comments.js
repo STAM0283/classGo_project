@@ -21,7 +21,7 @@ const Comments = () => {
           <div className="commentUser">
             <p className="createdAt">
               Ajouté le :
-              {item.createdAt.substr(0, 10)}
+              {item.createdAt.substr(0, 19)}
             </p>
             <p key={item.comment_id}>{item.content}</p>
           </div>

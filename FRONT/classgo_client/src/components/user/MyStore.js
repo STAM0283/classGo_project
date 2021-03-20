@@ -16,7 +16,7 @@ export default function MyStore() {
     <div style={{ width: '80vw', height: '80vh', marginLeft: '10%' }}>
       <WrappedMap
         isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyASy1wNktH5TIR2UR69ly6ooBOJKkCDIB4&v=3.exp&libraries=geometry,drawing,places"
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu5Zpd3RiBlWnPYkU-pVYPKoglAAWjHaU&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div style={{ height: '100%' }} />}
         mapElement={<div style={{ height: '100%' }} />}
