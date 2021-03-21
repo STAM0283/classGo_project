@@ -14,6 +14,7 @@ const routerSignIn = require('./routes/signIn');
 const routerUser = require('./routes/user');
 const routerComment = require('./routes/comments');
 const routerShoppingbasket = require('./routes/shoppingbasket');
+const routerAllArticles = require('./routes/allArticles');
 
 const PORT = 5000 || process.env.PORT;
 
@@ -36,6 +37,7 @@ app.use('/', routerSignIn);
 app.use('/', routerUser);
 app.use('/', routerComment);
 app.use('/', routerShoppingbasket);
+app.use('/', routerAllArticles);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
