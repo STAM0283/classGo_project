@@ -62,22 +62,25 @@ const Header = () => {
               </li>
               <li>
                 <select>
+                  <option>MONTRES</option>
                   {
-                    articles.filter((item) => item.category_id === 1).map((item) => <option>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 1).map((item) => <option id={item.article_id}>{item.name}</option>)
                   }
                 </select>
               </li>
               <li>
                 <select>
+                  <option>LUNETTES</option>
                   {
-                    articles.filter((item) => item.category_id === 2).map((item) => <option>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 2).map((item) => <option id={item.article_id}>{item.name}</option>)
                   }
                 </select>
               </li>
               <li>
                 <select>
+                  <option>BIJOUX</option>
                   {
-                    articles.filter((item) => item.category_id === 3).map((item) => <option>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 3).map((item) => <option id={item.article_id}>{item.name}</option>)
                   }
                 </select>
               </li>
