@@ -1,11 +1,14 @@
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import LOGO from '../../images/LOGO.png';
 import './interface.css';
 import MenuBurger from './MenuBurger';
 
 const Header = () => {
+  const [articles, setArticles] = useState([]);
   const history = useHistory();
   const homeDirection = () => {
     history.push('/');
@@ -28,6 +31,14 @@ const Header = () => {
   const commentDirection = () => {
     history.push('/userComments');
   };
+  useEffect(() => {
+    axios.get('http://localhost:5000/allArticles').then((response) => {
+      console.log(response.data);
+      setArticles(response.data);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }, []);
   return (
     <div id="header">
       <div className="header1">
@@ -50,16 +61,25 @@ const Header = () => {
                 ACCUEIL
               </li>
               <li>
-                MONTRES
-                <i className="fas fa-chevron-down" />
+                <select>
+                  {
+                    articles.filter((item) => item.category_id === 1).map((item) => <option>{item.name}</option>)
+                  }
+                </select>
               </li>
               <li>
-                LUNETTES
-                <i className="fas fa-chevron-down" />
+                <select>
+                  {
+                    articles.filter((item) => item.category_id === 2).map((item) => <option>{item.name}</option>)
+                  }
+                </select>
               </li>
               <li>
-                BIJOUX
-                <i className="fas fa-chevron-down" />
+                <select>
+                  {
+                    articles.filter((item) => item.category_id === 3).map((item) => <option>{item.name}</option>)
+                  }
+                </select>
               </li>
               <li onClick={aboutDirection} aria-hidden>
                 A PROPOS

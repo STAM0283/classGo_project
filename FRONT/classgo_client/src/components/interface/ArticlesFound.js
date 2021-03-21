@@ -16,8 +16,17 @@ const ArticlesFound = (props) => {
   const { inputValue } = props.data;
   const { setInputValue } = props.data;
   const [articleValue, setArticleValue] = useState('');
+  const [firstPage, setFirstPage] = useState(0);
+  const [lastPage, setLastPage] = useState(10);
+  const numberOfPage = Math.floor((articles.length / 10));
+  const [currentPage, setCurrentPage] = useState(1);
+  const [displayBtnNext, setDisplayBtnNext] = useState('block');
+  const [displayBtnPrevious, setDisplayBtnPrevious] = useState('none');
   const selectCategory = (event) => {
     const id = parseInt(event.target.id, 10);
+    setFirstPage(0);
+    setLastPage(10);
+    setCurrentPage(1);
     setCategory(id);
     setArticles((prevState) => prevState.filter((item) => item.category_id === category));
     setDisplayDescription('none');
@@ -47,6 +56,24 @@ const ArticlesFound = (props) => {
       console.log(err);
     });
   };
+  const nextPage = () => {
+    setFirstPage(firstPage + 10);
+    setLastPage(lastPage + 10);
+    setDisplayBtnPrevious('block');
+    setCurrentPage(currentPage + 1);
+    if (currentPage === numberOfPage) {
+      setDisplayBtnNext('none');
+    }
+  };
+  const previousPage = () => {
+    setFirstPage(firstPage - 10);
+    setLastPage(lastPage - 10);
+    setCurrentPage(currentPage - 1);
+    if (currentPage === 1) {
+      setDisplayBtnPrevious('none');
+      setDisplayBtnNext('block');
+    }
+  };
   return articles !== null ? (
     <div className="articlesFound">
       <div>
@@ -70,7 +97,7 @@ const ArticlesFound = (props) => {
       </div>
       <div className="allArticles">
         {
-         articles.map((article) => (
+         articles.slice(firstPage, lastPage).map((article) => (
            <div key={article.article_id} className="article-container">
              <br />
              <img src={article.picture} alt="montre" />
@@ -107,6 +134,14 @@ const ArticlesFound = (props) => {
            </div>
          ))
       }
+      </div>
+      <p>
+        Page Num :
+        {currentPage}
+      </p>
+      <div className="pagination">
+        <button type="button" onClick={previousPage} style={{ display: `${displayBtnPrevious}` }}>Page prècédente</button>
+        <button type="button" onClick={nextPage} style={{ display: `${displayBtnNext}` }}>Page suivante</button>
       </div>
     </div>
   ) : (

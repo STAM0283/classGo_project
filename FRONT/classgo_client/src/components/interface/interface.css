@@ -220,6 +220,16 @@ li{
   margin-bottom: 10px;
   justify-content: space-evenly;
 }
+.pagination{
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 20px;
+}
+.pagination button{
+  width: 150px;
+}
 /* --------------css contact----------------- */
 .contact{
   width: 60%;
