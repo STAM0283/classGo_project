@@ -1,4 +1,4 @@
- /* --------------CSS SELECT ------------- */
+ /* --------------CSS SELECT AND MODAL------------- */
 select {
   height: 40px;
   border-radius: 10px;
@@ -10,6 +10,33 @@ option {
   background-color: blanchedalmond;
   font-family:Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+#hideModal{
+  width: 14%;
+  margin-left: 43%;
+  height: 50px;
+  color: white;
+  font-size: xx-large;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  background-color: #48D1CC;
+}
+.modal{
+  margin-top: 100px;
+  width: 20%;
+  margin-left: 40%;
+  border-radius: 10px;
+  background-color: #48D1CC;
+}
+.modal img{
+  width: 100%;
+  border-radius: 40px;
+}
+.modal2{
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 10px;
+  padding-bottom: 20px;
 }
  /* CSS Menu Burger */
  #menu li {

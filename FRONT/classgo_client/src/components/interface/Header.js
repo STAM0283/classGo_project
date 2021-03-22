@@ -42,18 +42,13 @@ const Header = () => {
       console.log(err);
     });
   }, []);
-  const openModal = () => {
+  const openModal = (event) => {
     setIsOpen(true);
+    setSelectId(parseInt(event.target.value, 10));
   };
   const closeModal = () => {
     setIsOpen(false);
   };
-  const selectIdFunction = (event) => {
-    setSelectId(parseInt(event.target.id, 10));
-    console.log('@@@@@@@@@@@@à', selectId);
-    alert(selectId);
-  };
-  console.log(selectIdFunction);
   return (
     <div id="header">
       <div className="header1">
@@ -62,7 +57,7 @@ const Header = () => {
           <img src={LOGO} alt="logo-web-site" />
         </div>
         <div className="user">
-          <i className="far fa-comments" aria-hidden onClick={commentDirection()} />
+          <i className="far fa-comments" aria-hidden onClick={commentDirection} />
           <i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden />
           <i className="fas fa-user" onClick={connexionDirection} aria-hidden />
           <i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden />
@@ -80,7 +75,7 @@ const Header = () => {
                   <select onChange={openModal}>
                     <option>MONTRES</option>
                     {
-                    articles.filter((item) => item.category_id === 1).map((item) => <option id={item.article_id} onChange={selectIdFunction}>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 1).map((item) => <option value={item.article_id} id={item.article_id}>{item.name}</option>)
                   }
                   </select>
                 </div>
@@ -89,7 +84,7 @@ const Header = () => {
                 <select onChange={openModal}>
                   <option>LUNETTES</option>
                   {
-                    articles.filter((item) => item.category_id === 2).map((item) => <option id={item.article_id}>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 2).map((item) => <option value={item.article_id} id={item.article_id}>{item.name}</option>)
                   }
                 </select>
               </li>
@@ -97,7 +92,7 @@ const Header = () => {
                 <select onChange={openModal}>
                   <option>BIJOUX</option>
                   {
-                    articles.filter((item) => item.category_id === 3).map((item) => <option id={item.article_id}>{item.name}</option>)
+                    articles.filter((item) => item.category_id === 3).map((item) => <option value={item.article_id} id={item.article_id}>{item.name}</option>)
                   }
                 </select>
               </li>
@@ -110,13 +105,26 @@ const Header = () => {
             </ul>
           </nav>
           <Modal isOpen={isOpen}>
-            <button type="button" onClick={closeModal}>Hide modal</button>
-            <div>
+            <button type="button" onClick={closeModal} id="hideModal">Fermer la modale</button>
+            <div className="modal">
               {
                 articles.filter((item) => item.article_id === selectId).map((item) => (
-                  <div>
-                    <p>{item.name}</p>
-                    <p>{item.name}</p>
+                  <div key={item.article_id} className="article-container modal2">
+                    <br />
+                    <img src={item.picture} alt="montre" />
+                    <h2>{item.name}</h2>
+                    <div className="starsAndPrice">
+                      <div>
+                        <i className="far fa-star" />
+                        <i className="far fa-star" />
+                        <i className="far fa-star" />
+                        <i className="far fa-star" />
+                        <i className="far fa-star" />
+                      </div>
+                      <div>
+                        <p>{item.price}</p>
+                      </div>
+                    </div>
                   </div>
                 ))
               }
