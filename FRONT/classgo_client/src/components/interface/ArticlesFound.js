@@ -32,6 +32,7 @@ const ArticlesFound = (props) => {
     setDisplayDescription('none');
     setDisplaySpan1('inline');
     setDisplaySpan2('none');
+    setDisplayBtnNext('block');
   };
   const selectArticle = (event) => {
     const id = parseInt(event.target.id, 10);
@@ -39,6 +40,8 @@ const ArticlesFound = (props) => {
     setDisplayDescription('block');
     setDisplaySpan1('none');
     setDisplaySpan2('block');
+    setDisplayBtnNext('none');
+    setDisplayBtnPrevious('none');
   };
   const handleArticleValue = (event) => {
     setArticleValue(event.target.value);

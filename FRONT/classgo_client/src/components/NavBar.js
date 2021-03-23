@@ -33,7 +33,7 @@ const NavBar = () => (
           <NavLink exact to="/shoopingCart" />
         </li>
         <li>
-          <NavLink exact to="adminConnexion" />
+          <NavLink exact to="/adminConnexion" />
         </li>
         <li>
           <NavLink exact to="/addArticles" />
@@ -43,6 +43,9 @@ const NavBar = () => (
         </li>
         <li>
           <NavLink exact to="/deleteArticles" />
+        </li>
+        <li>
+          <NavLink exact to="/addImages" />
         </li>
       </ul>
     </nav>

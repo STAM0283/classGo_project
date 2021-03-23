@@ -34,12 +34,14 @@ const Header = () => {
   const commentDirection = () => {
     history.push('/userComments');
   };
+  const adminDirection = () => {
+    history.push('/adminConnexion');
+  };
   useEffect(() => {
     axios.get('http://localhost:5000/allArticles').then((response) => {
-      console.log(response.data);
       setArticles(response.data);
     }).catch((err) => {
-      console.log(err);
+      throw err;
     });
   }, []);
   const openModal = (event) => {
@@ -61,6 +63,7 @@ const Header = () => {
           <i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden />
           <i className="fas fa-user" onClick={connexionDirection} aria-hidden />
           <i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden />
+          <i className="fas fa-user-cog" aria-hidden onClick={adminDirection} />
         </div>
       </div>
       <div className="navFlex">
@@ -113,6 +116,7 @@ const Header = () => {
                     <br />
                     <img src={item.picture} alt="montre" />
                     <h2>{item.name}</h2>
+                    <p>{item.description}</p>
                     <div className="starsAndPrice">
                       <div>
                         <i className="far fa-star" />

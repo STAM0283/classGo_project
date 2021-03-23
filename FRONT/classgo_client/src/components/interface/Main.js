@@ -11,6 +11,11 @@ import Authentification from '../user/Authentification';
 import ShoopingCart from '../user/ShoopingCart';
 import Connexion from '../user/Connexion';
 import MyStore from '../user/MyStore';
+import AdminConnexion from '../admin/AdminConnexion';
+import AddArticles from '../admin/AddArticles';
+import AddImages from '../admin/AddImages';
+import DeleteArticles from '../admin/DeleteArticles';
+import UpdateArticles from '../admin/UpdateArticles';
 
 const Main = () => {
   const [articles, setArticles] = useState(null);
@@ -63,8 +68,20 @@ const Main = () => {
         <Route exact path="/shoopingCart">
           <ShoopingCart />
         </Route>
-        <Route>
-          <MyStore />
+        <Route exact path="/adminConnexion">
+          <AdminConnexion />
+        </Route>
+        <Route exact path="/addArticles">
+          <AddArticles />
+        </Route>
+        <Route exact path="/deleteArticles">
+          <DeleteArticles />
+        </Route>
+        <Route exact path="/updateArticles">
+          <UpdateArticles />
+        </Route>
+        <Route exact path="/addImages">
+          <AddImages />
         </Route>
       </Switch>
     </div>
