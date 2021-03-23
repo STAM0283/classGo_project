@@ -15,6 +15,8 @@ const routerUser = require('./routes/user');
 const routerComment = require('./routes/comments');
 const routerShoppingbasket = require('./routes/shoppingbasket');
 const routerAllArticles = require('./routes/allArticles');
+const routerAdminConnexion = require('./routes/admin');
+const routerAddImage = require('./routes/addDeleteImages');
 
 const PORT = 5000 || process.env.PORT;
 
@@ -38,6 +40,8 @@ app.use('/', routerUser);
 app.use('/', routerComment);
 app.use('/', routerShoppingbasket);
 app.use('/', routerAllArticles);
+app.use('/', routerAdminConnexion);
+app.use('/', routerAddImage);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
