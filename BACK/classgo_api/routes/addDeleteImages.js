@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require('express');
 
 const router = express.Router();
@@ -15,15 +16,13 @@ router.post('/slideShow', (req, res) => {
   });
 });
 router.delete('/slideShow', (req, res) => {
-  const id = req.query;
-  connexion.query('DELETE FROM images WHERE image_id =?', id, (err, result) => {
+  // eslint-disable-next-line camelcase
+  const data = req.body.image_id;
+  connexion.query('DELETE FROM images WHERE image_id = ?', [data], (err, result) => {
     if (err) {
       res.send(err);
     } else {
-      res.send({
-        message: 'OK',
-        data: result,
-      });
+      res.send(result);
     }
   });
 });
