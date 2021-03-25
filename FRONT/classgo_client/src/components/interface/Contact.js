@@ -32,8 +32,8 @@ const Contact = () => {
       object,
       message,
     };
-    axios.post('http://localhost:5000/send-email', data).then(() => {
-      console.log('@@@@@@@@@@', data);
+    axios.post('http://localhost:5000/send-email', data).then((response) => {
+      console.log('@@@@@@@@@@', response);
       alert('Votre message a été envoyé avec succé !');
       setName('');
       setEmail('');

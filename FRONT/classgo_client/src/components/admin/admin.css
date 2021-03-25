@@ -86,7 +86,7 @@
     width: 60%;
     margin-top: 20px;
     border: 2px solid black;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 .imageAdmin h3{
     font-size: xx-large;
@@ -119,4 +119,32 @@
 }
 .imageAdmin label {
     font-size: xx-large;
+}
+.deleteImage img{
+    width: 200px;
+    width: 100px;
+}
+.deleteImage {
+    border: 2px solid black;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.wrapperImages{
+    width: 200px;
+    margin-bottom: 20px;
+}
+.deleteImage h3{
+    font-size: xx-large;
+    background-color: cadetblue;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
 }

@@ -1,10 +1,12 @@
-import React from 'react';
+/* eslint-disable camelcase */
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
 import axios from 'axios';
 
 const AddImages = () => {
   const history = useHistory();
+  const [images, setImages] = useState([]);
+  const [idImage, setIdImage] = useState('');
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const addArticlesDiretion = () => {
@@ -25,6 +27,11 @@ const AddImages = () => {
   const handleUrl = (event) => {
     setUrl(event.target.value);
   };
+  useEffect(() => {
+    axios.get('http://localhost:5000/images').then((response) => {
+      setImages(response.data);
+    });
+  }, []);
   const submitImage = (event) => {
     event.preventDefault();
     const dataImage = {
@@ -37,6 +44,22 @@ const AddImages = () => {
     }).catch((err) => {
       throw err;
     });
+  };
+  const handleIdImage = (event) => {
+    setIdImage(event.target.value);
+  };
+  const deleteImage = (event) => {
+    event.preventDefault();
+    const image_id = parseInt(idImage, 10);
+    if (image_id !== null) {
+      axios.delete('http://localhost:5000/slideShow', [image_id]).then((response) => {
+        console.log(response.data, image_id, typeof (image_id));
+      }).catch((err) => {
+        alert(err);
+      });
+    } else {
+      alert('erreur');
+    }
   };
   return (
     <div className="addArticles">
@@ -58,6 +81,25 @@ const AddImages = () => {
         <br />
         <button type="submit">Ajouter</button>
       </form>
+      <div className="deleteImage">
+        <h3>Supprimer des images de la diaporama</h3>
+        <div className="container">
+          {
+            images.map((item) => (
+
+              <div className="wrapperImages">
+                <form onSubmit={deleteImage}>
+                  <p>{item.title}</p>
+                  <img src={item.url} alt="" />
+                  <p>{item.image_id}</p>
+                  <button type="submit" value={item.image_id} onClick={handleIdImage}>Supprimer</button>
+                </form>
+              </div>
+
+            ))
+        }
+        </div>
+      </div>
     </div>
   );
 };
