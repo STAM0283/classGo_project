@@ -28,5 +28,14 @@ router.post('/articles', (req, res) => {
     }
   });
 });
-
+router.delete('/articles', (req, res) => {
+  const id = req.query.article_id;
+  connexion.query('DELETE FROM article WHERE article_id = ?', id, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 module.exports = router;

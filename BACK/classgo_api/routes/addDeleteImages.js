@@ -17,8 +17,8 @@ router.post('/slideShow', (req, res) => {
 });
 router.delete('/slideShow', (req, res) => {
   // eslint-disable-next-line camelcase
-  const data = req.body.image_id;
-  connexion.query('DELETE FROM images WHERE image_id = ?', [data], (err, result) => {
+  const id = req.query.image_id;
+  connexion.query('DELETE FROM images WHERE image_id = ?', id, (err, result) => {
     if (err) {
       res.send(err);
     } else {
