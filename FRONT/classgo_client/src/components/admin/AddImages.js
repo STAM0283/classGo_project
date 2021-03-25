@@ -41,6 +41,7 @@ const AddImages = () => {
     axios.post('http://localhost:5000/slideShow', dataImage).then(() => {
       setTitle('');
       setUrl('');
+      document.location.reload();
     }).catch((err) => {
       throw err;
     });
@@ -51,15 +52,12 @@ const AddImages = () => {
   const deleteImage = (event) => {
     event.preventDefault();
     const image_id = parseInt(idImage, 10);
-    if (image_id !== null) {
-      axios.delete('http://localhost:5000/slideShow', [image_id]).then((response) => {
-        console.log(response.data, image_id, typeof (image_id));
-      }).catch((err) => {
-        alert(err);
-      });
-    } else {
-      alert('erreur');
-    }
+    axios.delete(`http://localhost:5000/slideShow?image_id=${image_id}`).then((response) => {
+      console.log(response);
+      document.location.reload();
+    }).catch((err) => {
+      alert(err);
+    });
   };
   return (
     <div className="addArticles">

@@ -148,3 +148,71 @@
     margin-bottom: 30px;
 
 }
+/* ----------------CSS ADD ARTICLES------------- */
+.formAddArticle {
+    width: 60%;
+    margin-left: 20%;
+    border: 2px solid black;
+
+}
+.formAddArticle input{
+    width: 94%;
+   height: 50px;
+   margin-left: 3%;
+   border-radius: 10px;
+   font-size: large;
+   margin-bottom: 20px;
+}
+.formAddArticle input::placeholder{
+    font-size: large;
+    padding-left: 5px;
+}
+.formAddArticle h3{
+    font-size: xx-large;
+    background-color: cadetblue;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.formAddArticle label{
+    font-size: large;
+}
+.formAddArticle button{
+    width: 30%;
+    height: 50px;
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    background-color: #48D1CC;
+    color: white;
+}
+/* --------------CSS DELETE ARTICLES-------------- */
+.containerArticles img{
+    width: 60px;
+}
+.containerArticles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.wrapperArticles form {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 200px;
+    height: 180px;
+}
+.parentWrapper{
+    width: 60%;
+    margin-left: 20%;
+    border: 2px solid black;
+}
+.parentWrapper h3 {
+    font-size: xx-large;
+    background-color: cadetblue;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
