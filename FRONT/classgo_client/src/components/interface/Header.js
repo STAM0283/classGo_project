@@ -73,7 +73,7 @@ const Header = () => {
               <li onClick={homeDirection} aria-hidden activeClassName="current">
                 ACCUEIL
               </li>
-              <li activeClassName="current">
+              <li>
                 <div className="monSelectMontres">
                   <select onChange={openModal}>
                     <option>MONTRES</option>
@@ -83,7 +83,7 @@ const Header = () => {
                   </select>
                 </div>
               </li>
-              <li activeClassName="current">
+              <li>
                 <select onChange={openModal}>
                   <option>LUNETTES</option>
                   {

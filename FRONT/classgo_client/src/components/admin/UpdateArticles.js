@@ -68,8 +68,8 @@ const UpdateArticles = () => {
 
     <div className="addArticles">
       <div className="btnAdmin">
+        <button className="btnAddArticles deconnexion" type="button" onClick={adminDirection} style={{ backgroundColor: 'red' }}>Déconnexion</button>
         <button className="btnAddImage" type="button" onClick={addArticlesDiretion}>Ajouter des articles</button>
-        <button className="btnAddArticles" type="button" onClick={adminDirection}>Déconnexion</button>
         <button className="btnDeleteArticles" type="button" onClick={slideShowDiretion}>Diaporama</button>
         <button className="btnUpdateArticles" type="button" onClick={deleleArticlesDirection}>Supprimer des articles</button>
       </div>
