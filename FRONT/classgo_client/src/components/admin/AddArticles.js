@@ -61,7 +61,7 @@ const AddArticles = () => {
     <div className="addArticles">
       <div className="btnAdmin">
         <button className="btnAddImage" type="button" onClick={slideShowDiretion}>Diaporama</button>
-        <button className="btnAddArticles" type="button" onClick={adminDirection}>Admin connexion</button>
+        <button className="btnAddArticles" type="button" onClick={adminDirection}>Déconnexion</button>
         <button className="btnDeleteArticles" type="button" onClick={deleleArticlesDirection}>Supprimer des articles</button>
         <button className="btnUpdateArticles" type="button" onClick={updateArticlesDirections}>Modifier des articles</button>
       </div>

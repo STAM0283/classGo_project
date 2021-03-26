@@ -190,6 +190,7 @@
 /* --------------CSS DELETE ARTICLES-------------- */
 .containerArticles img{
     width: 60px;
+    height: 50px;
 }
 .containerArticles{
     display: flex;
@@ -201,7 +202,7 @@
     margin-bottom: 10px;
     border-radius: 10px;
     width: 200px;
-    height: 180px;
+    height: 150px;
 }
 .parentWrapper{
     width: 60%;
@@ -215,4 +216,16 @@
     height: 80px;
     padding-top: 20px;
     margin-bottom: 30px;
+}
+.parentWrapper p{
+    background-color:cyan;
+    margin-bottom: 10px;
+}
+.parentWrapper button {
+    background-color: red;
+    width: 46%;
+    margin-left: 27%;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
 }

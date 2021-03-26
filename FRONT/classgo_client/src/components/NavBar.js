@@ -6,7 +6,7 @@ const NavBar = () => (
     <nav>
       <ul>
         <li>
-          <NavLink exact to="/" />
+          <NavLink exact activeClassName="current" to="/" />
         </li>
         <li>
           <NavLink exact to="/contact" />
@@ -15,13 +15,13 @@ const NavBar = () => (
           <NavLink exact to="/about" />
         </li>
         <li>
-          <NavLink exact to="/searchBar" />
+          <NavLink exact to="/searchBar" activeClassName="current" />
         </li>
         <li>
-          <NavLink exact to="/myStore" />
+          <NavLink exact to="/myStore" activeClassName="current" />
         </li>
         <li>
-          <NavLink exact to="/userConnexion" />
+          <NavLink exact to="/userConnexion" activeClassName="current" />
         </li>
         <li>
           <NavLink exact to="/userInscription" />

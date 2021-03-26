@@ -31,7 +31,7 @@ const Main = () => {
   return articles !== null ? (
     <div className="Main">
       <Switch>
-        <Route exact path="/">
+        <Route exact activeClassName="current" path="/">
           <Home data={{
             articles,
             setArticles,

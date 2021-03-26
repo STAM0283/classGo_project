@@ -8,6 +8,9 @@ const DeleteArticles = () => {
   const history = useHistory();
   const [articleId, setArticle_id] = useState('');
   const [allArticles, setAllArticles] = useState([]);
+  const [displayFirstBtn, setDisplayFirstBtn] = useState('block');
+  const [displaySecondBtn, setDisplaySecondBtn] = useState('none');
+  const [displayThirdBtn, setDisplayThirdBtn] = useState('none');
   const addArticlesDiretion = () => {
     history.push('/addArticles');
   };
@@ -27,6 +30,9 @@ const DeleteArticles = () => {
   }, []);
   const hanldeId = (event) => {
     setArticle_id(event.target.value);
+    setDisplayFirstBtn('block');
+    setDisplaySecondBtn('none');
+    setDisplayThirdBtn('block');
   };
   const deleteArticle = (event) => {
     event.preventDefault();
@@ -38,11 +44,24 @@ const DeleteArticles = () => {
       alert(err);
     });
   };
+  const handleFirstBtn = (event) => {
+    const id = parseInt(event.target.id, 10);
+    setAllArticles(allArticles.filter((item) => item.article_id === id));
+    setDisplayFirstBtn('none');
+    setDisplaySecondBtn('block');
+    setDisplayThirdBtn('block');
+  };
+  const handleSecondeBtn = () => {
+    setDisplayFirstBtn('block');
+    setDisplaySecondBtn('none');
+    setDisplayThirdBtn('none');
+    document.location.reload();
+  };
   return (
     <div className="addArticles">
       <div className="btnAdmin">
         <button className="btnAddImage" type="button" onClick={addArticlesDiretion}>Ajouter des articles</button>
-        <button className="btnAddArticles" type="button" onClick={adminDirection}>Admin connexion</button>
+        <button className="btnAddArticles" type="button" onClick={adminDirection}>Déconnexion</button>
         <button className="btnDeleteArticles" type="button" onClick={slideShowDiretion}>Diaporama</button>
         <button className="btnUpdateArticles" type="button" onClick={updateArticlesDirections}>Modifier des articles</button>
       </div>
@@ -54,11 +73,16 @@ const DeleteArticles = () => {
         allArticles.map((item) => (
           <div className="wrapperArticles">
             <form onSubmit={deleteArticle}>
-              <p>{item.name}</p>
+              <p>{item.name.substr(0, 8)}</p>
               <img src={item.picture} alt="" />
               <br />
-              <p>{item.article_id}</p>
-              <button type="submit" value={item.article_id} onClick={hanldeId}>Supprimer</button>
+              <h4>{item.article_id}</h4>
+              <button id={item.article_id} type="button" style={{ display: `${displayFirstBtn}` }} onClick={handleFirstBtn}>Supprimer</button>
+              <h5 style={{ display: `${displaySecondBtn}` }}>Vous confirmez ?</h5>
+              <div style={{ display: 'flex' }}>
+                <button type="submit" value={item.article_id} onClick={hanldeId} style={{ display: `${displaySecondBtn}` }}>OUI</button>
+                <button type="button" onClick={handleSecondeBtn} style={{ display: `${displayThirdBtn}` }}>NON</button>
+              </div>
             </form>
           </div>
         ))

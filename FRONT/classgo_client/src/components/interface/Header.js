@@ -70,10 +70,10 @@ const Header = () => {
         <div className="header2">
           <nav>
             <ul>
-              <li onClick={homeDirection} aria-hidden>
+              <li onClick={homeDirection} aria-hidden activeClassName="current">
                 ACCUEIL
               </li>
-              <li>
+              <li activeClassName="current">
                 <div className="monSelectMontres">
                   <select onChange={openModal}>
                     <option>MONTRES</option>
@@ -83,7 +83,7 @@ const Header = () => {
                   </select>
                 </div>
               </li>
-              <li>
+              <li activeClassName="current">
                 <select onChange={openModal}>
                   <option>LUNETTES</option>
                   {
