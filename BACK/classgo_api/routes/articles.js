@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require('express');
 const connexion = require('../data/mysql');
 
@@ -31,6 +32,21 @@ router.post('/articles', (req, res) => {
 router.delete('/articles', (req, res) => {
   const id = req.query.article_id;
   connexion.query('DELETE FROM article WHERE article_id = ?', id, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+router.put('/articles', (req, res) => {
+  const { article_id } = req.body;
+  const { name } = req.body;
+  const { description } = req.body;
+  const { picture } = req.body;
+  const { category_id } = req.body;
+  const { price } = req.body;
+  connexion.query('UPDATE article SET name = ? AND IS NOT NULL, description = ?, picture = ?, category_id = ?, price = ? WHERE article_id = ? ', [name, description, picture, category_id, price, article_id], (err, result) => {
     if (err) {
       res.send(err);
     } else {
