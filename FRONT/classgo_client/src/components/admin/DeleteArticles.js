@@ -24,7 +24,7 @@ const DeleteArticles = () => {
     axios.get('http://localhost:5000/allArticles').then((response) => {
       setAllArticles(response.data);
     });
-  });
+  }, []);
   const hanldeId = (event) => {
     setArticle_id(event.target.value);
   };
@@ -33,6 +33,7 @@ const DeleteArticles = () => {
     const article_id = parseInt(articleId, 10);
     axios.delete(`http://localhost:5000/articles?article_id=${article_id}`).then((response) => {
       console.log(response);
+      document.location.reload();
     }).catch((err) => {
       alert(err);
     });
