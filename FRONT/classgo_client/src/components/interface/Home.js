@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import SlideShow from './SlideShow';
@@ -8,7 +9,7 @@ const Home = (props) => {
   const { setArticles } = props.data;
   const { allArtciles } = props.data;
   const { setAllArticles } = props.data;
-  const { category } = props.data;
+  const { category_id } = props.data;
   const { setCategory } = props.data;
   const { inputValue } = props.data;
   const { setInputValue } = props.data;
@@ -21,7 +22,7 @@ const Home = (props) => {
         setArticles,
         allArtciles,
         setAllArticles,
-        category,
+        category_id,
         setCategory,
         inputValue,
         setInputValue,

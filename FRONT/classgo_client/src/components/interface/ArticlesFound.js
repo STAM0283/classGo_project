@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -11,14 +12,14 @@ const ArticlesFound = (props) => {
   const { setArticles } = props.data;
   const { allArtciles } = props.data;
   const { setAllArticles } = props.data;
-  const { category } = props.data;
+  const { category_id } = props.data;
   const { setCategory } = props.data;
   const { inputValue } = props.data;
   const { setInputValue } = props.data;
   const [articleValue, setArticleValue] = useState('');
   const [firstPage, setFirstPage] = useState(0);
   const [lastPage, setLastPage] = useState(10);
-  const numberOfPage = Math.floor((articles.length / 10));
+  const numberOfPage = Math.ceil((articles.length / 10));
   const [currentPage, setCurrentPage] = useState(1);
   const [displayBtnNext, setDisplayBtnNext] = useState('block');
   const [displayBtnPrevious, setDisplayBtnPrevious] = useState('none');
@@ -28,7 +29,7 @@ const ArticlesFound = (props) => {
     setLastPage(10);
     setCurrentPage(1);
     setCategory(id);
-    setArticles((prevState) => prevState.filter((item) => item.category_id === category));
+    setArticles((prevState) => prevState.filter((item) => item.category_id === category_id));
     setDisplayDescription('none');
     setDisplaySpan1('inline');
     setDisplaySpan2('none');
@@ -85,7 +86,7 @@ const ArticlesFound = (props) => {
           setArticles,
           allArtciles,
           setAllArticles,
-          category,
+          category_id,
           setCategory,
           inputValue,
           setInputValue,
@@ -143,8 +144,12 @@ const ArticlesFound = (props) => {
         {currentPage}
       </p>
       <div className="pagination">
-        <button type="button" onClick={previousPage} style={{ display: `${displayBtnPrevious}` }}>Page prècédente</button>
-        <button type="button" onClick={nextPage} style={{ display: `${displayBtnNext}` }}>Page suivante</button>
+        <button type="button" onClick={previousPage} style={{ display: `${displayBtnPrevious}` }}>
+          Page prècédente
+        </button>
+        <button type="button" onClick={nextPage} style={{ display: `${displayBtnNext}` }}>
+          Page suivante
+        </button>
       </div>
     </div>
   ) : (

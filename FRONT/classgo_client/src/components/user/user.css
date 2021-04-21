@@ -58,7 +58,7 @@ hr {
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 /* -----------------CSS FOOTER----------------- */
 .none{

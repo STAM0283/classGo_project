@@ -59,11 +59,15 @@ const Header = () => {
           <img src={LOGO} alt="logo-web-site" />
         </div>
         <div className="user">
-          <i className="far fa-comments" aria-hidden onClick={commentDirection} />
-          <i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden />
-          <i className="fas fa-user" onClick={connexionDirection} aria-hidden />
-          <i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden />
-          <i className="fas fa-user-cog" aria-hidden onClick={adminDirection} />
+          <nav>
+            <ul>
+              <li><i className="far fa-comments" aria-hidden onClick={commentDirection} /></li>
+              <li><i className="fas fa-store-alt" onClick={myStoreDirection} aria-hidden /></li>
+              <li><i className="fas fa-user" onClick={connexionDirection} aria-hidden /></li>
+              <li><i className="fas fa-shopping-cart" onClick={shoppingCartDirection} aria-hidden /></li>
+              <li><i className="fas fa-user-cog" aria-hidden onClick={adminDirection} /></li>
+            </ul>
+          </nav>
         </div>
       </div>
       <div className="navFlex">

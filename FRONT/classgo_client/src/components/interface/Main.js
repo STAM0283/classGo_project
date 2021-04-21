@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
@@ -20,24 +21,24 @@ import UpdateArticles from '../admin/UpdateArticles';
 const Main = () => {
   const [articles, setArticles] = useState(null);
   const [allArtciles, setAllArticles] = useState('');
-  const [category, setCategory] = useState('');
+  const [category_id, setCategory] = useState('');
   const [inputValue, setInputValue] = useState('');
   useEffect(() => {
-    axios.get(`http://localhost:5000/articles?category_id=${category}`).then((response) => {
+    axios.get(`http://localhost:5000/articles?category_id=${category_id}`).then((response) => {
       setArticles(response.data);
       setAllArticles(response.data);
     });
-  }, [category]);
+  }, [category_id]);
   return articles !== null ? (
     <div className="Main">
       <Switch>
-        <Route exact activeClassName="current" path="/">
+        <Route exact path="/">
           <Home data={{
             articles,
             setArticles,
             allArtciles,
             setAllArticles,
-            category,
+            category_id,
             setCategory,
             inputValue,
             setInputValue,

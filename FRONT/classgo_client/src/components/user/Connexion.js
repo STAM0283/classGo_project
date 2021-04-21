@@ -35,14 +35,14 @@ const Connexion = () => {
       password,
     };
     axios.post('http://localhost:5000/signIn', dataUser).then((response) => {
-      if (response.data.status === 200) {
+      if (response.data.message === 'success') {
         setDisplayWrongPassword('none');
+        setEmail('');
+        setPassword('');
         history.push('/');
       } else {
         setDisplayWrongPassword('block');
       }
-      setEmail('');
-      setPassword('');
     }).catch((err) => {
       throw err;
     });

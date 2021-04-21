@@ -46,14 +46,13 @@ const Authentification = () => {
     };
     if (validateEmail(email)) {
       axios.post('http://localhost:5000/signUp', data).then(() => {
-        alert('Votre message a été envoyé avec succé !');
         validateEmail(email);
         setSex('');
         setUserName('');
         setEmail('');
         setPassword('');
       }).catch((err) => {
-        console.log(err);
+        throw err;
       });
     } else {
       setEmailValide('block');
@@ -71,9 +70,21 @@ const Authentification = () => {
       </p>
       <form onSubmit={submiteForm}>
         <div className="civilite">
-          <input type="radio" name="sex" id="women" value="women" onClick={handleSexe} />
+          <input
+            type="radio"
+            name="sex"
+            id="women"
+            value="women"
+            onClick={handleSexe}
+          />
           <label htmlFor="women">Madame</label>
-          <input type="radio" name="sex" id="man" walue="man" onClick={handleSexe} />
+          <input
+            type="radio"
+            name="sex"
+            id="man"
+            walue="man"
+            onClick={handleSexe}
+          />
           <label htmlFor="man">Monsieur</label>
         </div>
         <br />
@@ -85,7 +96,13 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="text" id="text" placeholder="Entrer votre nom" onChange={handleName} value={username} />
+          <input
+            type="text"
+            id="text"
+            placeholder="Entrer votre nom"
+            onChange={handleName}
+            value={username}
+          />
           <br />
           <div>
             <label htmlFor="email">
@@ -94,7 +111,13 @@ const Authentification = () => {
             </label>
           </div>
           <br />
-          <input type="text" id="email" placeholder="Entrer votre adress email" onChange={handleEmail} value={email} />
+          <input
+            type="text"
+            id="email"
+            placeholder="Entrer votre adress email"
+            onChange={handleEmail}
+            value={email}
+          />
           <br />
           <span style={{ display: `${emailValide}` }}>Cette émail n&#39;est pas valide</span>
           <br />

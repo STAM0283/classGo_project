@@ -8,6 +8,9 @@ a.current {
   margin: 0;
   padding: 0;
 }
+p, option, li, h1, h2, h3, h4, button{
+  font-family: 'Merriweather', serif;
+}
 button {
   cursor: pointer;
 }
