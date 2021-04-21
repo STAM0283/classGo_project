@@ -12,40 +12,40 @@ const NavBar = () => (
           <Link exact to="/contact" />
         </li>
         <li>
-          <NavLink exact to="/about" />
+          <Link exact to="/about" />
         </li>
         <li>
-          <NavLink exact to="/searchBar" />
+          <Link exact to="/searchBar" />
         </li>
         <li>
-          <NavLink exact to="/myStore" />
+          <Link exact to="/myStore" />
         </li>
         <li>
-          <NavLink exact to="/userConnexion" />
+          <Link exact to="/userConnexion" />
         </li>
         <li>
-          <NavLink exact to="/userInscription" />
+          <Link exact to="/userInscription" />
         </li>
         <li>
-          <NavLink exact to="/userComments" />
+          <Link exact to="/userComments" />
         </li>
         <li>
-          <NavLink exact to="/shoopingCart" />
+          <Link exact to="/shoopingCart" />
         </li>
         <li>
-          <NavLink exact to="/adminConnexion" />
+          <Link exact to="/adminConnexion" />
         </li>
         <li>
-          <NavLink exact to="/addArticles" />
+          <Link exact to="/addArticles" />
         </li>
         <li>
-          <NavLink exact to="/updateArticles" />
+          <Link exact to="/updateArticles" />
         </li>
         <li>
-          <NavLink exact to="/deleteArticles" />
+          <Link exact to="/deleteArticles" />
         </li>
         <li>
-          <NavLink exact to="/addImages" />
+          <Link exact to="/addImages" />
         </li>
       </ul>
     </nav>
