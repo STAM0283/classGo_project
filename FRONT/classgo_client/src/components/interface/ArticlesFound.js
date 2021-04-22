@@ -23,6 +23,8 @@ const ArticlesFound = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayBtnNext, setDisplayBtnNext] = useState('block');
   const [displayBtnPrevious, setDisplayBtnPrevious] = useState('none');
+  const [displayButtonPagination, setDisplayButtonPagination] = useState('block');
+  const [displayCurrentPage, setDisplayCurrentPage] = useState('block');
   const selectCategory = (event) => {
     const id = parseInt(event.target.id, 10);
     setFirstPage(0);
@@ -34,6 +36,8 @@ const ArticlesFound = (props) => {
     setDisplaySpan1('inline');
     setDisplaySpan2('none');
     setDisplayBtnNext('block');
+    setDisplayButtonPagination('block');
+    setDisplayCurrentPage('inline');
   };
   const selectArticle = (event) => {
     const id = parseInt(event.target.id, 10);
@@ -43,6 +47,8 @@ const ArticlesFound = (props) => {
     setDisplaySpan2('block');
     setDisplayBtnNext('none');
     setDisplayBtnPrevious('none');
+    setDisplayButtonPagination('none');
+    setDisplayCurrentPage('none');
   };
   const handleArticleValue = (event) => {
     setArticleValue(event.target.value);
@@ -139,11 +145,11 @@ const ArticlesFound = (props) => {
          ))
       }
       </div>
-      <p>
+      <div style={{ display: { displayCurrentPage } }}>
         Page Num :
         {currentPage}
-      </p>
-      <div className="pagination">
+      </div>
+      <div className="pagination" style={{ display: { displayButtonPagination } }}>
         <button type="button" onClick={previousPage} style={{ display: `${displayBtnPrevious}` }}>
           Page prècédente
         </button>

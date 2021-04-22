@@ -16,7 +16,7 @@ const Home = (props) => {
   return (
     <div className="home">
       <SlideShow />
-      <h3 style={{ fontSize: 'xx-large' }}>NOS PRODUITS PHARES</h3>
+      <h3>TROUVEZ VOS PRODUITS PHARES</h3>
       <ArticleFound data={{
         articles,
         setArticles,
