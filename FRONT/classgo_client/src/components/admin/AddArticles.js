@@ -53,8 +53,8 @@ const AddArticles = () => {
       setPicture('');
       setCategoryId('');
       setPrice('');
-    }).catch(() => {
-      alert('erreur');
+    }).catch((err) => {
+      console.log(err);
     });
   };
   return (
