@@ -56,10 +56,8 @@ const Footer = () => {
         <ul>
           <li>FAQ</li>
           <li aria-hidden onClick={aboutDirection}>A PROPOS</li>
-          <li>LIVRAISON</li>
           <li aria-hidden onClick={myStoreDirection}>MAGASINS</li>
           <li aria-hidden onClick={contactDirection}>CONTACT</li>
-          <li>AIDE</li>
           <li>MENTIONS LEGALES</li>
         </ul>
       </nav>
