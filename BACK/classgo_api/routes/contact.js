@@ -36,7 +36,7 @@ router.post('/send-email', (req, res) => {
     html: messageReceived,
   }, (err) => {
     if (err) {
-      console.log(err);
+      res.send(err);
     }
     res.send('Email a été envoyé avec succés');
   });

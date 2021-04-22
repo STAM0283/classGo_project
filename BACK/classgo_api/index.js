@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const routerCategory = require('./routes/category');
 const routerArticle = require('./routes/articles');
 const routerImage = require('./routes/images');
@@ -26,8 +25,8 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/', routerCategory);
 app.use('/', routerArticle);

@@ -16,15 +16,18 @@ router.post('/slideShow', (req, res) => {
   });
 });
 router.delete('/slideShow', (req, res) => {
-  // eslint-disable-next-line camelcase
   const id = req.query.image_id;
-  connexion.query('DELETE FROM images WHERE image_id = ?', id, (err, result) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(result);
-    }
-  });
+  try {
+    connexion.query('DELETE FROM images WHERE image_id = ?', id, (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+  } catch (error) {
+    res.send(error.toString());
+  }
 });
 
 module.exports = router;
