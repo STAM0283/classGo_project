@@ -256,7 +256,7 @@ li{
 }
 .pagination{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 20%;
   margin-left: 40%;
   margin-top: 20px;
