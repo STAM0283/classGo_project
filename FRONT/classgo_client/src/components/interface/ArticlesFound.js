@@ -65,7 +65,7 @@ const ArticlesFound = (props) => {
     setLastPage(lastPage + 10);
     setDisplayBtnPrevious('block');
     setCurrentPage(currentPage + 1);
-    if (currentPage === numberOfPage) {
+    if (currentPage === numberOfPage - 1) {
       setDisplayBtnNext('none');
     }
   };
@@ -73,7 +73,7 @@ const ArticlesFound = (props) => {
     setFirstPage(firstPage - 10);
     setLastPage(lastPage - 10);
     setCurrentPage(currentPage - 1);
-    if (currentPage === 1) {
+    if (currentPage === 2) {
       setDisplayBtnPrevious('none');
       setDisplayBtnNext('block');
     }
