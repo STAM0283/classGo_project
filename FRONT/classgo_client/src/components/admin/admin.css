@@ -311,4 +311,39 @@
     background-color: #48D1CC;
     color: white;
 }
+/* ----------------Media querie ADD ARTICLES------------- */
+.formAddArticle {
+    width: 80%;
+    margin-left: 10%;
+}
+.btnAdmin {
+    margin-top: 20px;
+}
+.btnAdmin button {
+    width: 25%;
+    height: 40px;
+    font-size: x-small;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.formAddArticle button {
+    font-size: small;
+    height: 40px;
+}
+.formAddArticle h3 {
+    font-size: large;
+    height: 30px;
+}
+.formAddArticle input{
+    width: 94%;
+   height: 30px;
+   margin-left: 3%;
+   border-radius: 10px;
+   font-size: medium;
+   margin-bottom: 10px;
+}
+.formAddArticle input::placeholder{
+    font-size: medium;
+    padding-left: 5px;
+}
 }
