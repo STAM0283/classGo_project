@@ -5,8 +5,8 @@ const connexion = require('../data/mysql');
 const router = express.Router();
 
 router.get('/articles', (req, res) => {
-  const { category_id } = req.body;
-  const query = category_id !== undefined ? `SELECT * from article WHERE category_id = '${category_id}'` : 'SELECT * from article';
+  const { category_id } = req.query;
+  const query = category_id !== '' ? `SELECT * from article WHERE category_id = '${category_id}'` : 'SELECT * from article';
   try {
     connexion.query(query, (err, result) => {
       if (err) {
