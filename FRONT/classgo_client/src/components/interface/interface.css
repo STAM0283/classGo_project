@@ -425,6 +425,40 @@ textarea::placeholder{
       margin-top: 40px;
       margin-bottom: 100px;
     }
+    .contact{
+      width: 80%;
+      margin-left: 10%;
+    }
+    .contact p{
+      font-size: small;
+      text-align: start;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    .contact div{
+      margin-top: 20px;
+    }
+    .contact button{
+      width: 100px;
+      height: 50px;
+      font-size: small;
+      margin-right: 5px;
+      border-radius: 10px;
+      color: white;
+    }
+    .emailName input{
+      width: 90%;
+      height: 40px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      font-size: xx-large;
+    }
+    .object input{
+      width: 90%;
+      height: 40px;
+      border-radius: 10px;
+      font-size: xx-large;
+    }
   
   }
   @media (max-width: 414px){
