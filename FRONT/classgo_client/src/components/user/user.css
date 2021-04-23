@@ -325,9 +325,51 @@ hr {
     .commentUser{
         width: 300px;
     }
-    .connexion {
+    .authentification h3{
+        font-size: large;
+        background-color: cadetblue;
+        color: white;
+        height: 80px;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+    /* mediaQuerie user inscription */
+    .authentification{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .authentification p{
+        font-size: medium;
+        width: 20%;
+        margin-left: 18%;
+    }
+    .authentification button{
+        height: 40px;
+        font-size: medium;
+        margin-top: 10px;
+    }
+    .passAuthentification .fa-eye{
+        font-size: large;
+        margin-left: -30px;
+    
+    }
+    .passAuthentification .fa-eye-slash{
+        font-size: large;
+        margin-left: -30px;
+    }
+    .civilite{
+        width: 20%;
+        margin-left: 22%;
+    }
+    .civilite input{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .authentification label{
+        font-size: large;
+    }
+    .userInfo{
         width: 90%;
         margin-left: 5%;
-        border: 2px solid red;
     }
 }
