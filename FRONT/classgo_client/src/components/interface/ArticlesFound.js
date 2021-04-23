@@ -39,6 +39,19 @@ const ArticlesFound = (props) => {
     setDisplayButtonPagination('block');
     setDisplayCurrentPage('inline');
   };
+  const selectAllCategory = () => {
+    setFirstPage(0);
+    setLastPage(10);
+    setCurrentPage(1);
+    setCategory('');
+    // setArticles((prevState) => prevState.filter((item) => item.category_id === category_id));
+    setDisplayDescription('none');
+    setDisplaySpan1('inline');
+    setDisplaySpan2('none');
+    setDisplayBtnNext('block');
+    setDisplayButtonPagination('block');
+    setDisplayCurrentPage('inline');
+  };
   const selectArticle = (event) => {
     const id = parseInt(event.target.id, 10);
     setArticles(articles.filter((item) => item.article_id === id));
@@ -100,7 +113,7 @@ const ArticlesFound = (props) => {
         />
       </div>
       <div className="categoryArticles">
-        <h4 aria-hidden onClick={selectCategory}>tous</h4>
+        <h4 aria-hidden id="''" onClick={selectAllCategory}>tous</h4>
         <h4 aria-hidden id="1" onClick={selectCategory}>Montres</h4>
         <h4 aria-hidden id="2" onClick={selectCategory}>Lunettes</h4>
         <h4 aria-hidden id="3" onClick={selectCategory}>Bijoux</h4>
