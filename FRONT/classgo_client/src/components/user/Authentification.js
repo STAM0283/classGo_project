@@ -64,10 +64,12 @@ const Authentification = () => {
   return (
     <div className="authentification">
       <h3>Mes informations</h3>
-      <p>
-        Civilité
-        <i className="fas fa-star" />
-      </p>
+      <div style={{ width: '25%' }}>
+        <label>
+          Civilité
+          <i className="fas fa-star" />
+        </label>
+      </div>
       <form onSubmit={submiteForm}>
         <div className="civilite">
           <input

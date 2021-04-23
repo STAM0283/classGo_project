@@ -372,4 +372,7 @@ hr {
         width: 90%;
         margin-left: 5%;
     }
+    .authentification  i{
+        font-size: xx-small;
+    }
 }
