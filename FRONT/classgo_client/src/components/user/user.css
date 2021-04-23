@@ -126,12 +126,12 @@ hr {
 }
 
 /* ---------------------------CSS CONNEXION-------------------- */
-.connexion{
+/* .connexion{
     width: 60%;
     margin-top: 20px;
-    border: 2px solid black;
+    border: 2px solid red;
     margin-left: 25%;
-}
+} */
 .connexion h3{
     font-size: xx-large;
     background-color: cadetblue;
@@ -324,5 +324,10 @@ hr {
     }
     .commentUser{
         width: 300px;
+    }
+    .connexion {
+        width: 90%;
+        margin-left: 5%;
+        border: 2px solid red;
     }
 }
