@@ -374,4 +374,14 @@
     width: 80%;
     margin-left: 10%;
 }
+/* --------------Media Query DELETE ARTICLES-------------- */
+.parentWrapper h3 {
+    font-size: large;
+    height: 40px;
+}
+.parentWrapper{
+    width: 80%;
+    margin-left: 10%;
+    border: 2px solid black;
+}
 }
