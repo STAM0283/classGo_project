@@ -32,7 +32,7 @@
     margin-left: 35%;
 }
 .comments form button{
-    width: 30%;
+    width: 25%;
     height: 50px;
     font-size: xx-large;
     border-radius: 10px;
@@ -41,7 +41,7 @@
 
 }
 .comments textarea{
-    width: 80%;
+    width: 550px;
     height: 140px;
     font-size: large;
 }
@@ -300,5 +300,29 @@ hr {
     }
     .socialMedias i{
         font-size: small;
+    }
+    .comments form {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .leaveComment label {
+        font-size: medium;
+    }
+    .comments textarea{
+        width: 250px;
+        height: 140px;
+        font-size: large;
+    }
+    .comments form button{
+        width: 25%;
+        height: 50px;
+        font-size: small;
+        border-radius: 10px;
+        margin-bottom: 60px;
+        background-color: #48D1CC;
+    
+    }
+    .commentUser{
+        width: 300px;
     }
 }

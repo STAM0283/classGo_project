@@ -29,7 +29,7 @@ const LeaveComment = () => {
   };
   return (
     <form onSubmit={submiteComment} className="leaveComment">
-      <label htmlFor="addComment" style={{ fontSize: 'x-large', marginTop: '10px' }}>Ajouter un commentaire :</label>
+      <label htmlFor="addComment" style={{ marginTop: '10px' }}>Ajouter un commentaire :</label>
       <br />
       <textarea type="text" id="addComment" value={content} onChange={handleComment} placeholder="Laissez un commentaire" />
       <br />
