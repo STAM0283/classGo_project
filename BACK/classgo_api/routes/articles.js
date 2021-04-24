@@ -55,7 +55,7 @@ router.put('/articles', (req, res) => {
   const { category_id } = req.body;
   const { price } = req.body;
   try {
-    connexion.query('UPDATE article SET name = ? description = ?, picture = ?, category_id = ?, price = ? WHERE article_id = ?',
+    connexion.query('UPDATE article SET name = ?, description = ?, picture = ?, category_id = ?, price = ? WHERE article_id = ?',
       [name, description, picture, category_id, price, article_id], (err, result) => {
         if (err) {
           res.send(err);
