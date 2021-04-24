@@ -10,6 +10,8 @@ const AddArticles = () => {
   const [picture, setPicture] = useState('');
   const [category_id, setCategoryId] = useState('');
   const [price, setPrice] = useState('');
+  const [displayParagraph, setDisplayParagraph] = useState('none');
+  const [displayParagraph2, setDisplayParagraph2] = useState('none');
   const slideShowDiretion = () => {
     history.push('/addImages');
   };
@@ -46,23 +48,32 @@ const AddArticles = () => {
       category_id,
       price,
     };
-    axios.post('http://localhost:5000/articles', data).then((response) => {
-      console.log(response.data);
-      setName('');
-      setDescription('');
-      setPicture('');
-      setCategoryId('');
-      setPrice('');
-    }).catch((err) => {
-      console.log(err);
-    });
+    if (name !== '' && description !== '' && picture !== '' && category_id !== '' && price !== '') {
+      axios.post('http://localhost:5000/articles', data).then((response) => {
+        console.log(response.data);
+        setDisplayParagraph('block');
+        setDisplayParagraph2('none');
+        setTimeout(() => {
+          setDisplayParagraph('none');
+        }, 5000);
+        setName('');
+        setDescription('');
+        setPicture('');
+        setCategoryId('');
+        setPrice('');
+      }).catch((err) => {
+        console.log(err);
+      });
+    } else {
+      setDisplayParagraph2('block');
+    }
   };
   return (
     <div className="addArticles">
       <div className="btnAdmin">
         <button className="btnAddArticles deconnexion" type="button" onClick={adminDirection} style={{ backgroundColor: 'red' }}>Déconnexion</button>
         <button className="btnAddImage" type="button" onClick={slideShowDiretion}>Diaporama</button>
-        <button className="btnDeleteArticles" type="button" onClick={deleleArticlesDirection}>Supprimer des articles</button>
+        <button className="btnDeleteArticles" type="button" onClick={deleleArticlesDirection}>Suppr des articles</button>
         <button className="btnUpdateArticles" type="button" onClick={updateArticlesDirections}>Modifier des articles</button>
       </div>
       <form className="formAddArticle" onSubmit={submitForm}>
@@ -87,6 +98,18 @@ const AddArticles = () => {
         <br />
         <input type="text" id="price" placeholder="Ajoutez le prix de l'article" value={price} onChange={handlePrice} />
         <br />
+        <p style={{
+          display: `${displayParagraph}`, color: 'green', fontWeight: 'bold', marginBottom: '10px',
+        }}
+        >
+          L&#39;article a été ajouté avec succès
+        </p>
+        <p style={{
+          display: `${displayParagraph2}`, color: 'red', fontWeight: 'bold', marginBottom: '10px',
+        }}
+        >
+          Veuillez remplir tous les champs
+        </p>
         <button type="submit">Ajouter</button>
       </form>
     </div>
