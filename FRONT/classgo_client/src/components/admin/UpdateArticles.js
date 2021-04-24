@@ -55,7 +55,7 @@ const UpdateArticles = () => {
       price,
     };
     if (article_id !== '' && name !== '' && description !== '' && picture !== '' && category_id !== '' && price !== '') {
-      axios.patch('http://localhost:5000/articles', data).then((response) => {
+      axios.put('http://localhost:5000/articles', data).then((response) => {
         console.log(response.data);
         setDisplayParagraph('block');
         setDisplayParagraph2('none');
