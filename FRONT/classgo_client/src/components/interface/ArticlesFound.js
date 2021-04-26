@@ -44,7 +44,6 @@ const ArticlesFound = (props) => {
     setLastPage(10);
     setCurrentPage(1);
     setCategory('');
-    // setArticles((prevState) => prevState.filter((item) => item.category_id === category_id));
     setDisplayDescription('none');
     setDisplaySpan1('inline');
     setDisplaySpan2('none');
@@ -68,12 +67,13 @@ const ArticlesFound = (props) => {
   };
   const articlePost = () => {
     const data = {
+      article_id: articleValue.article_id,
       name: articleValue.name,
       picture: articleValue.picture,
       price: articleValue.price,
     };
     axios.post('http://localhost:5000/shoopingCart', data).then((response) => {
-      console.log(response);
+      alert(response.data);
       alert(data);
     }).catch((err) => {
       console.log(err);
@@ -143,6 +143,7 @@ const ArticlesFound = (props) => {
              </button>
              <button
                value={{
+                 article_id: article.article_id,
                  name: article.name,
                  picture: article.picture,
                  price: article.price,

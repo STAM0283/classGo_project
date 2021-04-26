@@ -55,8 +55,7 @@ const UpdateArticles = () => {
       price,
     };
     if (article_id !== '' && name !== '' && description !== '' && picture !== '' && category_id !== '' && price !== '') {
-      axios.put('http://localhost:5000/articles', data).then((response) => {
-        console.log(response.data);
+      axios.put('http://localhost:5000/articles', data).then(() => {
         setDisplayParagraph('block');
         setDisplayParagraph2('none');
         setTimeout(() => {
@@ -68,8 +67,8 @@ const UpdateArticles = () => {
         setCategoryId('');
         setPrice('');
         setArticleId('');
-      }).catch((e) => {
-        alert(toString(e));
+      }).catch((err) => {
+        throw err;
       });
     } else {
       setDisplayParagraph2('block');

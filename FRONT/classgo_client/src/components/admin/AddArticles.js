@@ -49,8 +49,7 @@ const AddArticles = () => {
       price,
     };
     if (name !== '' && description !== '' && picture !== '' && category_id !== '' && price !== '') {
-      axios.post('http://localhost:5000/articles', data).then((response) => {
-        console.log(response.data);
+      axios.post('http://localhost:5000/articles', data).then(() => {
         setDisplayParagraph('block');
         setDisplayParagraph2('none');
         setTimeout(() => {
@@ -62,7 +61,7 @@ const AddArticles = () => {
         setCategoryId('');
         setPrice('');
       }).catch((err) => {
-        console.log(err);
+        throw err;
       });
     } else {
       setDisplayParagraph2('block');

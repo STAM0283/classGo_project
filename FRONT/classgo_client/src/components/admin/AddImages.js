@@ -52,11 +52,10 @@ const AddImages = () => {
   const deleteImage = (event) => {
     event.preventDefault();
     const image_id = parseInt(idImage, 10);
-    axios.delete(`http://localhost:5000/slideShow?image_id=${image_id}`).then((response) => {
-      console.log(response);
+    axios.delete(`http://localhost:5000/slideShow?image_id=${image_id}`).then(() => {
       document.location.reload();
     }).catch((err) => {
-      alert(err);
+      throw err;
     });
   };
   return (
@@ -64,7 +63,7 @@ const AddImages = () => {
       <div className="btnAdmin">
         <button className="btnAddArticles deconnexion" type="button" onClick={adminDirection} style={{ backgroundColor: 'red' }}>Déconnexion</button>
         <button className="btnAddImage" type="button" onClick={addArticlesDiretion}>Ajouter des articles</button>
-        <button className="btnDeleteArticles" type="button" onClick={deleleArticlesDirection}>Supprimer des articles</button>
+        <button className="btnDeleteArticles" type="button" onClick={deleleArticlesDirection}>Suppr des articles</button>
         <button className="btnUpdateArticles" type="button" onClick={updateArticlesDirections}>Modifier des articles</button>
       </div>
       <form className="imageAdmin" onSubmit={submitImage}>

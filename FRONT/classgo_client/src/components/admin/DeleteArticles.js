@@ -37,11 +37,10 @@ const DeleteArticles = () => {
   const deleteArticle = (event) => {
     event.preventDefault();
     const article_id = parseInt(articleId, 10);
-    axios.delete(`http://localhost:5000/articles?article_id=${article_id}`).then((response) => {
-      console.log(response);
+    axios.delete(`http://localhost:5000/articles?article_id=${article_id}`).then(() => {
       document.location.reload();
     }).catch((err) => {
-      alert(err);
+      throw err;
     });
   };
   const handleFirstBtn = (event) => {
