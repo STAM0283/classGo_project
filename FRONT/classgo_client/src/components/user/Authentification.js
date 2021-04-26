@@ -10,6 +10,8 @@ const Authentification = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailValide, setEmailValide] = useState('none');
+  const [displayParagraph, setDisplayParagraph] = useState('none');
+  const [displayParagraph2, setDisplayParagraph2] = useState('none');
   const handleSexe = (event) => {
     setSex(event.target.value);
   };
@@ -44,9 +46,14 @@ const Authentification = () => {
       email,
       password,
     };
-    if (validateEmail(email)) {
+    if (validateEmail(email) && sex !== '' && username !== '' && email !== '' && password !== '') {
       axios.post('http://localhost:5000/signUp', data).then(() => {
         validateEmail(email);
+        setDisplayParagraph('block');
+        setDisplayParagraph2('none');
+        setTimeout(() => {
+          setDisplayParagraph('none');
+        }, 5000);
         setSex('');
         setUserName('');
         setEmail('');
@@ -59,6 +66,7 @@ const Authentification = () => {
       setTimeout(() => {
         setEmailValide('none');
       }, 5000);
+      setDisplayParagraph2('block');
     }
   };
   return (
@@ -136,6 +144,18 @@ const Authentification = () => {
             <i className="fas fa-eye-slash" aria-hidden style={{ display: `${displayEyeSlash}` }} onClick={handleDisplayEyeSlash} />
           </div>
         </div>
+        <p style={{
+          display: `${displayParagraph}`, color: 'green', fontWeight: 'bold', marginBottom: '10px', width: '50%', marginLeft: '25%',
+        }}
+        >
+          votre compte a été créé avec succès
+        </p>
+        <p style={{
+          display: `${displayParagraph2}`, color: 'red', fontWeight: 'bold', marginBottom: '10px', width: '50%', marginLeft: '25%',
+        }}
+        >
+          Veuillez remplir tous les champs
+        </p>
         <div>
           <button type="submit">Valider</button>
         </div>
