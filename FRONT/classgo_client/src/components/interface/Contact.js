@@ -6,6 +6,8 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [object, setObject] = useState('');
   const [message, setMessage] = useState('');
+  const [displayParagraph, setDisplayParagraph] = useState('none');
+  const [displayParagraph2, setDisplayParagraph2] = useState('none');
   const handleName = (event) => {
     setName(event.target.value);
   };
@@ -32,14 +34,23 @@ const Contact = () => {
       object,
       message,
     };
-    axios.post('http://localhost:5000/send-email', data).then(() => {
-      setName('');
-      setEmail('');
-      setObject('');
-      setMessage('');
-    }).catch((err) => {
-      throw err;
-    });
+    if (name !== '' && email !== '' && object !== '' && message !== '') {
+      axios.post('http://localhost:5000/send-email', data).then(() => {
+        setDisplayParagraph('block');
+        setDisplayParagraph2('none');
+        setTimeout(() => {
+          setDisplayParagraph('none');
+        }, 5000);
+        setName('');
+        setEmail('');
+        setObject('');
+        setMessage('');
+      }).catch((err) => {
+        throw err;
+      });
+    } else {
+      setDisplayParagraph2('block');
+    }
   };
   return (
     <div className="contact">
@@ -55,6 +66,18 @@ const Contact = () => {
         <div className="message">
           <textarea type="text" rows="10" lang="10" placeholder="Message" value={message} onChange={hanldeMessage} />
         </div>
+        <p style={{
+          display: `${displayParagraph}`, color: 'green', fontWeight: 'bold', marginBottom: '10px',
+        }}
+        >
+          votre message a été envoyé avec succès
+        </p>
+        <p style={{
+          display: `${displayParagraph2}`, color: 'red', fontWeight: 'bold', marginBottom: '10px',
+        }}
+        >
+          Veuillez remplir tous les champs
+        </p>
         <div className="btn">
           <button type="submit" id="btn1">Envoyer</button>
           <button type="button" id="btn2" onClick={reinitialisation}>Réinitialiser</button>
