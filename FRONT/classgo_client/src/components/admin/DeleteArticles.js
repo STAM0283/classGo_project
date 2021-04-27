@@ -79,8 +79,8 @@ const DeleteArticles = () => {
               <button id={item.article_id} type="button" style={{ display: `${displayFirstBtn}` }} onClick={handleFirstBtn}>Supprimer</button>
               <h5 style={{ display: `${displaySecondBtn}` }}>Vous confirmez ?</h5>
               <div style={{ display: 'flex' }}>
-                <button type="submit" value={item.article_id} onClick={hanldeId} style={{ display: `${displaySecondBtn}` }}>OUI</button>
-                <button type="button" onClick={handleSecondeBtn} style={{ display: `${displayThirdBtn}` }}>NON</button>
+                <button type="submit" value={item.article_id} onClick={hanldeId} style={{ display: `${displaySecondBtn}`, marginLeft: '40px' }}>OUI</button>
+                <button type="button" onClick={handleSecondeBtn} style={{ display: `${displayThirdBtn}`, marginRight: '60px' }}>NON</button>
               </div>
             </form>
           </div>
