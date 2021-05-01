@@ -39,6 +39,7 @@ const AddArticles = () => {
   const handlePrice = (event) => {
     setPrice(event.target.value);
   };
+  // axios.defaults.withCredentials = true;
   const submitForm = (event) => {
     event.preventDefault();
     const data = {

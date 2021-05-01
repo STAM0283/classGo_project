@@ -27,6 +27,7 @@ const AdminConnexion = () => {
     setType('password');
     setDisplayEyeSlash('none');
   };
+  // axios.defaults.withCredentials = true;
   const submitSigIn = (event) => {
     event.preventDefault();
     const dataUser = {
