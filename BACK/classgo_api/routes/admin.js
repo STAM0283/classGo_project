@@ -1,6 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
+// const session = require('express-session');
+// const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const connexion = require('../data/mysql');
 
@@ -31,6 +33,8 @@ router.post('/adminConnexion', async (req, res) => {
     if (result.length > 0) {
       await bcrypt.compare(password, result[0].password, (error, response) => {
         if (response) {
+          req.session.admin = result;
+          console.log(result);
           res.send({
             status: 200,
             message: 'success',
@@ -45,7 +49,7 @@ router.post('/adminConnexion', async (req, res) => {
       });
     } else {
       res.send({
-        message: 'User doesn\'t exist',
+        message: 'Admin doesn\'t exist',
       });
     }
   });

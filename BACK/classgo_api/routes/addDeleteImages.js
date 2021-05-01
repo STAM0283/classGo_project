@@ -4,7 +4,15 @@ const express = require('express');
 const router = express.Router();
 const connexion = require('../data/mysql');
 
-router.post('/slideShow', (req, res) => {
+function requireLogin(req, res, next) {
+  if (req.session.loggedIn) {
+    next(); // allow the next route to run
+  } else {
+    // require the user to log in
+    res.redirect('/adminConnexion'); // or render a form, etc.
+  }
+}
+router.post('/slideShow', requireLogin, (req, res) => {
   const { title } = req.body;
   const { url } = req.body;
   connexion.query('INSERT INTO images (title, url) VALUES (?, ?)', [title, url], (err, result) => {

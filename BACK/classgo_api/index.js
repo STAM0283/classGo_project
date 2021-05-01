@@ -1,6 +1,9 @@
 const express = require('express');
 
 const app = express();
+const morgan = require('morgan');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const routerCategory = require('./routes/category');
@@ -23,10 +26,21 @@ const limiter = rateLimit({
   windowMs: 3 * 60 * 1000,
   max: 30,
 });
+app.use(morgan('tiny'));
 app.use(limiter);
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  key: 'adminId',
+  secret: 'secretcode',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 60 * 60 * 24,
+  },
+}));
+app.use(cookieParser('secretcode'));
 
 app.use('/', routerCategory);
 app.use('/', routerArticle);
